@@ -1,3 +1,6 @@
+// import {} from 'https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js'
+
+
 // Adapted from http://web.mit.edu/6.813/www/sp18/assignments/as1-implementation/logging.js
 //
 // A simple Google-spreadsheet-based event logging framework.
@@ -154,62 +157,10 @@ return {
 
 }());
 
-/////////////////////////////////////////////////////////////////////////////
-// CHANGE ME:
-// ** Replace the function below by substituting your own google form. **
-/////////////////////////////////////////////////////////////////////////////
-//
-// 1. Create a Google form called "Network Log" at forms.google.com.
-// 2. Set it up to have several "short answer" questions; here we assume
-//    seven questions: uid, time, eventName, target, info, state, version.
-// 3. Run googlesender.py to make a javascript
-//    function that submits records directly to the form.
-// 4. Put that function in here, and replace the current sendNetworkLog
-//    so that your version is called to log events to your form.
-//
-// For example, the following code was written as follows:
-// python googlesender.py https://docs.google.com/forms/d/e/1.../viewform
-//
-// This preocess changes the ids below to direct your data into your own
-// form and spreadsheet. The formid must be customized, and also the form
-// field names such as "entry.1291686978" must be matched to your form.
-// (The numerical field names for a Google form can be found by inspecting
-// the form input fields.) This can be done manually, but since this is an
-// error-prone process, it can be easier to use googlesender.py.
-//
-/////////////////////////////////////////////////////////////////////////////
 
-// function sendNetworkLog(
-//     uid,
-//     time,
-//     eventName,
-//     target,
-//     info,
-//     state,
-//     log_version) {
-//   var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
-//   var data = {
-//     "entry.1213174370": uid,
-//     "entry.1557365071": time,
-//     "entry.2063334899": eventName,
-//     "entry.787942568": target,
-//     "entry.251233848": info,
-//     "entry.94462225": state,
-//     "entry.1473081078": log_version
-//   };
-//   var params = [];
-//   for (key in data) {
-//     params.push(key + "=" + encodeURIComponent(data[key]));
-//   }
-//   // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
-//   (new Image).src = "https://docs.google.com/forms/d/" + formid +
-//      "/formResponse?" + params.join("&");
-// }
-
-
-// Untitled form submission function
+// Network Log submission function
 // submits to the google form at this URL:
-// docs.google.com/forms/d/e/1FAIpQLSea_fuBpNiOmWKug1Y9WYS_ZOjBymlfglautUHZC8z1RkV7lg/viewform
+// docs.google.com/forms/d/e/1FAIpQLSea_fuBpNiOmWKug1Y9WYS_ZOjBymlfglautUHZC8z1RkV7lg/viewform?usp=sf_link
 function sendNetworkLog(
   uid,
   time,
@@ -232,7 +183,51 @@ var params = [];
 for (key in data) {
   params.push(key + "=" + encodeURIComponent(data[key]));
 }
+
+console.log(params)
+
+// To make config into env. variables or something later...
+var config = {
+  apiKey: "AIzaSyDHS4bE_-NO3oHn-l6V6dnb3hqRPRtM2mI",
+  authDomain: "cs4249-669e7.firebaseapp.com",
+  databaseURL: "https://cs4249-669e7.firebaseio.com",
+  projectId: "cs4249-669e7",
+  storageBucket: "cs4249-669e7.appspot.com",
+  messagingSenderId: "183591372879",
+  appId: "1:183591372879:web:38e2f3dd3d85b36e35c23a",
+  measurementId: "G-VP4CCRPV74"
+};
+
+
+if (!firebase.apps.length) {
+  var app = firebase.initializeApp(config);
+}
+
+
+db = firebase.firestore(app);
+
+// Add a new document in collection "cities"
+db.collection("test-data-set").doc(uid).collection("actions").add({
+  "entry.953249183": uid,
+  "entry.1438746555": time,
+  "entry.1341857314": eventname,
+  "entry.1704761232": target,
+  "entry.1224112279": info,
+  "entry.928151468": state,
+  "entry.1004753386": version
+})
+.then(function() {
+  console.log("Document successfully written!");
+})
+.catch(function(error) {
+  console.error("Error writing document: ", error);
+});
+
+
+
+
 // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
 (new Image).src = "https://docs.google.com/forms/d/" + formid +
    "/formResponse?" + params.join("&");
 }
+

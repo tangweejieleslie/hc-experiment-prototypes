@@ -1,34 +1,67 @@
 <html>
+
 <head>
-<title>Test Logging</title>
-<script src="logging.js"></script>
+	<title>Test Logging</title>
+
 </head>
 
 <body>
 
-<script>
-function sendCustomEvent() {
-	console.log('sendCustomEvent');
-	document.dispatchEvent(new CustomEvent('myevent', { detail: {
-		eventName: 'myeventName',
-		info: {'key1': 'val1', 'key2': 'val2'}
-	}}));
-}
-document.addEventListener('myevent', loggingjs.logEvent, true);
+	<script>
+		function sendCustomEvent() {
+			console.log('sendCustomEvent');
+			document.dispatchEvent(new CustomEvent('myevent', {
+				detail: {
+					eventName: 'myeventName',
+					info: { 'key1': 'val1', 'key2': 'val2' }
+				}
+			}));
+		}
+		document.addEventListener('myevent', loggingjs.logEvent, true);
 
-function sendCustomEvent2() {
-	console.log('sendCustomEvent2');
-	loggingjs.logEvent(null, 'myevent2', {
-		eventName: 'myeventName',
-		info: {'key1': 'val1', 'key2': 'val2'}
-	});
-}
-</script>
+		function sendCustomEvent2() {
+			console.log('sendCustomEvent2');
+			loggingjs.logEvent(null, 'myevent2', {
+				eventName: 'myeventName',
+				info: { 'key1': 'val1', 'key2': 'val2' }
+			});
+		}
+	</script>
 
-<div id="label">Label</div>
-<input id="inText" type="text"/>
-<input id="btn" value="Send Custom Event" type="button" onclick="sendCustomEvent()"/>
-<input id="btn2" value="Send Custom Event 2" type="button" onclick="sendCustomEvent2()"/>
+	<div id="label">Label</div>
+	<input id="inText" type="text" />
+	<input id="btn" value="Send Custom Event" type="button" onclick="sendCustomEvent()" />
+	<input id="btn2" value="Send Custom Event 2" type="button" onclick="sendCustomEvent2()" />
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+	 <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-auth.js"></script>
+	 <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-analytics.js"></script>
+
+	<!-- <script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+			apiKey: "AIzaSyDHS4bE_-NO3oHn-l6V6dnb3hqRPRtM2mI",
+			authDomain: "cs4249-669e7.firebaseapp.com",
+			databaseURL: "https://cs4249-669e7.firebaseio.com",
+			projectId: "cs4249-669e7",
+			storageBucket: "cs4249-669e7.appspot.com",
+			messagingSenderId: "183591372879",
+			appId: "1:183591372879:web:38e2f3dd3d85b36e35c23a",
+			measurementId: "G-VP4CCRPV74"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	</script> -->
+
+	<script src="logging.js"></script>
 
 </body>
 
