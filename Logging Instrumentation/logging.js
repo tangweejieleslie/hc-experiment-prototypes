@@ -179,29 +179,60 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
+// function sendNetworkLog(
+//     uid,
+//     time,
+//     eventName,
+//     target,
+//     info,
+//     state,
+//     log_version) {
+//   var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
+//   var data = {
+//     "entry.1213174370": uid,
+//     "entry.1557365071": time,
+//     "entry.2063334899": eventName,
+//     "entry.787942568": target,
+//     "entry.251233848": info,
+//     "entry.94462225": state,
+//     "entry.1473081078": log_version
+//   };
+//   var params = [];
+//   for (key in data) {
+//     params.push(key + "=" + encodeURIComponent(data[key]));
+//   }
+//   // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
+//   (new Image).src = "https://docs.google.com/forms/d/" + formid +
+//      "/formResponse?" + params.join("&");
+// }
+
+
+// Untitled form submission function
+// submits to the google form at this URL:
+// docs.google.com/forms/d/e/1FAIpQLSea_fuBpNiOmWKug1Y9WYS_ZOjBymlfglautUHZC8z1RkV7lg/viewform
 function sendNetworkLog(
-    uid,
-    time,
-    eventName,
-    target,
-    info,
-    state,
-    log_version) {
-  var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
-  var data = {
-    "entry.1213174370": uid,
-    "entry.1557365071": time,
-    "entry.2063334899": eventName,
-    "entry.787942568": target,
-    "entry.251233848": info,
-    "entry.94462225": state,
-    "entry.1473081078": log_version
-  };
-  var params = [];
-  for (key in data) {
-    params.push(key + "=" + encodeURIComponent(data[key]));
-  }
-  // Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
-  (new Image).src = "https://docs.google.com/forms/d/" + formid +
-     "/formResponse?" + params.join("&");
+  uid,
+  time,
+  eventname,
+  target,
+  info,
+  state,
+  version) {
+var formid = "e/1FAIpQLSea_fuBpNiOmWKug1Y9WYS_ZOjBymlfglautUHZC8z1RkV7lg";
+var data = {
+  "entry.953249183": uid,
+  "entry.1438746555": time,
+  "entry.1341857314": eventname,
+  "entry.1704761232": target,
+  "entry.1224112279": info,
+  "entry.928151468": state,
+  "entry.1004753386": version
+};
+var params = [];
+for (key in data) {
+  params.push(key + "=" + encodeURIComponent(data[key]));
+}
+// Submit the form using an image to avoid CORS warnings; warning may still happen, but log will be sent. Go check result in Google Form
+(new Image).src = "https://docs.google.com/forms/d/" + formid +
+   "/formResponse?" + params.join("&");
 }
