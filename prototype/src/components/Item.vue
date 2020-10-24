@@ -20,6 +20,7 @@
 
       <v-card-text> Quantity: {{ quantity }} </v-card-text>
       <Slider :quantity.sync="quantity"></Slider>
+      <InputBox :quantity.sync="quantity"></InputBox>
       <v-btn color="accent" class="item-button" block tile>
         <v-icon class="icon-space">mdi-plus</v-icon> Add to My Order
       </v-btn>
@@ -31,9 +32,10 @@
 <script>
 import "@mdi/js";
 import Slider from "./Quantity/Slider";
+import InputBox from "./Quantity/Input";
 
 export default {
-  components: { Slider },
+  components: { Slider, InputBox },
   data: function () {
     return {
       itemPrice: 99.0,
