@@ -3,7 +3,7 @@
     <v-img
       width="480px"
       height="360px"
-      src="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+      :src=imageSource
     ></v-img>
     <div class="item-content">
       <v-card-title> Dish Name </v-card-title>
@@ -14,14 +14,15 @@
         <hr />
       </v-card-text>
       <v-card-text>
-        <v-icon color="accent">mdi-plus</v-icon> them here. We'll do our best to
+        <v-icon color="accent">mdi-plus</v-icon> Add them here. We'll do our best to
         make it happen</v-card-text
       >
 
-      <v-card-text> Quantity: {{ quantity }} </v-card-text>
-      <Slider :quantity.sync="quantity"></Slider>
-      <InputBox :quantity.sync="quantity"></InputBox>
-      <Increment :quantity.sync="quantity"></Increment>
+      <!-- <v-card-text> Quantity: {{ quantity }} </v-card-text> -->
+
+      <Slider  v-if="type=== 'slider'" :quantity.sync="quantity"></Slider>
+      <InputBox  v-else-if="type === 'input'" :quantity.sync="quantity"></InputBox>
+      <Increment v-else-if="type === 'increment'" :quantity.sync="quantity"></Increment>
       <v-btn color="accent" class="item-button" block tile>
         <v-icon class="icon-space">mdi-plus</v-icon> Add to My Order
       </v-btn>
@@ -37,11 +38,18 @@ import InputBox from "./Quantity/Input";
 import Increment from "./Quantity/Increment";
 
 export default {
+  props: {
+    name: String,
+    quantity: Number,
+    itemPrice: Number,
+    type: String,
+    imageSource: String
+  },
   components: { Slider, InputBox, Increment },
   data: function () {
     return {
-      itemPrice: 99.0,
-      quantity: 30,
+    //   itemPrice: 99.0,
+    //   quantity: 30,
     };
   },
 };
@@ -53,14 +61,14 @@ export default {
 }
 
 .item-content {
-  padding: 10px;
+  padding: 5px;
 }
 
 .item-button {
 }
 
 .icon-space {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 </style>

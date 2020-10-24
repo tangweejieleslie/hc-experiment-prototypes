@@ -2,7 +2,7 @@
   <v-card-text>
     <v-container class="no-padding">
       <v-row>
-        <v-col cols="3" justify="left"> Quantity </v-col>
+        <v-col cols="4" justify="left"> Quantity </v-col>
         <v-col cols="2" align="center">
           <v-btn
             fab

@@ -1,10 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
+    <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
@@ -38,17 +34,37 @@
     </v-app-bar>
 
     <v-main>
-      <ItemCard></ItemCard>
+      <v-col cols="4">
+        <ItemCard
+          quantity="1"
+          itemPrice="99"
+          type="increment"
+          imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+        ></ItemCard>
+      </v-col>
+
+      <ItemCard
+        quantity="1"
+        itemPrice="99"
+        type="input"
+        imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+      ></ItemCard>
+      <ItemCard
+        quantity="1"
+        itemPrice="99"
+        type="slider"
+        imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+      ></ItemCard>
     </v-main>
   </v-app>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld';
-import ItemCard from './components/Item';
+import ItemCard from "./components/Item";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
     ItemCard,
