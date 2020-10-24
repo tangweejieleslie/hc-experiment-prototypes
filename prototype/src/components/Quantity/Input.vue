@@ -1,11 +1,11 @@
 <template>
-  <v-card-text>
+  <v-card-text class="no-vertical-padding">
     <v-container class="no-padding">
-      <v-row>
-        <v-col cols="3" justify="left">
+      <v-row class="no-padding">
+        <v-col cols="4" justify="left" class="no-vertical-padding">
           <v-subheader class="no-padding">Quantity</v-subheader>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="4" class="no-vertical-padding">
           <v-text-field
             class="centered-input"
             max-width="50px"
@@ -45,6 +45,16 @@ export default {
 
 .no-padding {
   padding: 0px;
+}
+
+.no-horizontal-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.no-vertical-padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 /* Deep Selector 

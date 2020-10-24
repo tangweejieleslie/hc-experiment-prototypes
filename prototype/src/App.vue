@@ -34,27 +34,35 @@
     </v-app-bar>
 
     <v-main>
-      <v-col cols="4">
-        <ItemCard
-          quantity="1"
-          itemPrice="99"
-          type="increment"
-          imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
-        ></ItemCard>
-      </v-col>
+      <v-container class="fill-height">
+        <v-row>
+          <v-col cols="4">
+            <ItemCard
+              quantity="1"
+              itemPrice="99"
+              type="increment"
+              imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+            ></ItemCard>
+          </v-col>
 
-      <ItemCard
-        quantity="1"
-        itemPrice="99"
-        type="input"
-        imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
-      ></ItemCard>
-      <ItemCard
-        quantity="1"
-        itemPrice="99"
-        type="slider"
-        imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
-      ></ItemCard>
+          <v-col cols="4">
+            <ItemCard
+              quantity="1"
+              itemPrice="99"
+              type="input"
+              imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+            ></ItemCard>
+          </v-col>
+          <v-col cols="4">
+            <ItemCard
+              quantity="1"
+              itemPrice="99"
+              type="slider"
+              imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"
+            ></ItemCard>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
