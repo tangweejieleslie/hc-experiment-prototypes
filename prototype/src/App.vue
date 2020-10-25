@@ -12,6 +12,9 @@
     <v-main>
       <v-container class="fill-height">
         <v-row>
+          <v-col> <Cart></Cart></v-col>
+        </v-row>
+        <v-row>
           <v-col cols="4">
             <ItemCard
               quantity="1"
@@ -46,12 +49,14 @@
 <script>
 // import HelloWorld from './components/HelloWorld';
 import ItemCard from "./components/Item";
+import Cart from "./components/Cart";
 
 export default {
   name: "App",
 
   components: {
     ItemCard,
+    Cart,
   },
 
   data: () => ({
