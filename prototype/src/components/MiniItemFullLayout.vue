@@ -14,9 +14,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn icon color="accent" class="button-padding">
-            <v-icon>mdi-plus</v-icon>
-          </v-btn>
+
         </v-card-actions>
       </v-col>
     </v-row>
@@ -41,6 +39,11 @@ export default {
       //   quantity: 30,
     };
   },
+  methods:{
+      addItem(){
+
+      }
+  }
 };
 </script>
 
