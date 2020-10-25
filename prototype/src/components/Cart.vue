@@ -14,10 +14,11 @@
         <v-list-item v-for="item in cartItems" v-bind:key="item.id">
           <v-list-item-content>
             <v-list-item-title>
-              <v-row class="cart-item-row">
+              <v-row class="cart-item-row" justify="end" align="end">
                 {{ item.quantity }} x {{ item.name }}
                 <v-spacer></v-spacer>
                 ${{ item.cost }}
+                <v-btn color="red" class="icon" icon @click="deleteItem(item.id)"> X </v-btn>
               </v-row>
             </v-list-item-title>
           </v-list-item-content>
@@ -26,21 +27,21 @@
       <hr />
 
       <v-row>
-        <v-column
+        <v-col cols="6"
           ><v-card-text>
             Subtotal<br />
             Tax <br />
             Delivery</v-card-text
-          ></v-column
+          ></v-col
         >
         <v-spacer></v-spacer>
-        <v-column>
+        <v-col cols="6" align="right">
           <v-card-text>
-            ( $ {{ cartItems.length }} to be computed later ) <br />
-            ( $ {{ cartItems.length }} to be computed later ) <br />
-            ( $ {{ cartItems.length }} to be computed later )
+            ( $ {{ cartItems.length }} ) <br />
+            ( $ {{ cartItems.length }} ) <br />
+            ( $ {{ cartItems.length }} )
           </v-card-text>
-        </v-column>
+        </v-col>
       </v-row>
     </v-container>
     <hr />
@@ -77,6 +78,12 @@ export default {
       cartItems: this.$store.state.cartItems,
     };
   },
+  methods: {
+    deleteItem(itemId){
+      // console.log(e.target)
+      console.log(itemId)
+    }
+  }
 };
 </script>
 
@@ -107,5 +114,13 @@ export default {
 
 .item-button {
   width: 90%;
+}
+
+.icon{
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  
 }
 </style>
