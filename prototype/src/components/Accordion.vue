@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" tile>
-    <v-navigation-drawer permanent width="400px">
+    <v-navigation-drawer permanent width="100%">
       <v-list>
         <v-list-group
           v-for="item in items"

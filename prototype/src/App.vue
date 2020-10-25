@@ -9,7 +9,10 @@
       </div>
     </v-app-bar>
 
+
+
     <v-main>
+      <router-view></router-view>
       <v-container class="fill-height">
         <v-row>
           <Accordion></Accordion>
@@ -55,7 +58,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-main>
+    </v-main> 
   </v-app>
 </template>
 

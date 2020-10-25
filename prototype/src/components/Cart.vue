@@ -100,7 +100,8 @@ export default {
 
 <style scoped>
 .shopping-cart {
-  max-width: 480px;
+  /* max-width: 480px; */
+  width: 100%;
 }
 
 .item-content {

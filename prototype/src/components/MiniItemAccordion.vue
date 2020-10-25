@@ -1,8 +1,8 @@
 <template>
   <v-card class="item">
     <v-img width="300px" height="225px" :src="imageSource"></v-img>
-    <div class="item-content">
-      <v-card-title> Dish Name </v-card-title>
+    <div class="item-content" align="left">
+      <v-card-title> {{ name }} </v-card-title>
       <v-card-text> $ {{ itemPrice }} </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
