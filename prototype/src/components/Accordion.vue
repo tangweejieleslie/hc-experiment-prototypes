@@ -7,7 +7,7 @@
           :key="item.title"
           v-model="item.active"
         >
-          <template v-slot:activator class="selected">
+          <template v-slot:activator>
             <v-list-item-content>
               <v-list-item-title v-text="item.title"></v-list-item-title>
             </v-list-item-content>
@@ -18,12 +18,11 @@
             :key="child.title"
             link
             class="child-item"
+            :to="child.link"
           >
-            <template v-slot:activator>
-              <v-list-item-content>
-                <v-list-item-title class="text--black" v-text="child.title"></v-list-item-title>
-              </v-list-item-content>
-            </template>
+            <v-list-item-content>
+              <v-list-item-title v-text="child.title"></v-list-item-title>
+            </v-list-item-content>
           </v-list-item>
         </v-list-group>
       </v-list>
@@ -41,24 +40,24 @@ export default {
         {
           title: "The Old Chang Kee Platter",
           active: false,
-          items: [{ title: "List Item" }],
+          items: [{ title: "List Item", link: "/a" }],
         },
         {
           title: "Old Chang Kee Favourites",
-          active: false,
+          active: true,
           items: [
-            { title: "List Item" },
-            { title: "List Item" },
-            { title: "List Item" },
+            { title: "List Item", link: "/b" },
+            { title: "List Item", link: "/c" },
+            { title: "List Item", link: "/d" },
           ],
         },
         {
           title: "Traditional Favourites",
           active: false,
           items: [
-            { title: "Seafood Favourites" },
-            { title: "Chicken Favourites" },
-            { title: "Desserts" },
+            { title: "Seafood Favourites", link: "/3" },
+            { title: "Chicken Favourites", link: "/f" },
+            { title: "Desserts", link: "/g" },
           ],
         },
       ],
@@ -92,7 +91,5 @@ export default {
 
 .child-item {
   padding-left: 35px;
-  color: black !important;
-  background: red;
 }
 </style>
