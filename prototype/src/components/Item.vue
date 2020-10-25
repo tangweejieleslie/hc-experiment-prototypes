@@ -1,5 +1,9 @@
 <template>
   <v-card class="item">
+
+    <v-btn :to="`/item/1`">
+    ID: {{ id }}
+    </v-btn>
     <v-img
       width="480px"
       height="360px"
@@ -39,6 +43,7 @@ import Increment from "./Quantity/Increment";
 
 export default {
   props: {
+    id: Number,
     name: String,
     quantity: Number,
     itemPrice: Number,
