@@ -15,6 +15,7 @@
           <v-list-item-content>
             <v-list-item-title>
               <v-row class="cart-item-row" justify="end" align="end">
+                
                 {{ item.quantity }} x {{ item.name }}
                 <v-spacer></v-spacer>
                 ${{ item.cost }}
@@ -101,6 +102,7 @@ export default {
     deleteItem(itemId) {
       // console.log(e.target)
       console.log(itemId);
+      this.$store.commit("removeItemFromCart", { elementPosition: itemId -1  });
     },
   },
 };
