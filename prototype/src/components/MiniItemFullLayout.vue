@@ -1,15 +1,17 @@
 <template>
   <v-card class="item">
     <v-row>
-      <v-col cols="4">
-        <div class="image-space">
-          <v-img :src="imageSource"></v-img>
-        </div>
+      <v-col cols="4" justify="center" align="center">
+        <v-img class="image-space" :src="imageSource"></v-img>
       </v-col>
       <v-col>
-        <v-card-title class="no-padding"> Dish Name </v-card-title>
-        <v-card-text class="no-padding"> $ {{ itemPrice }} </v-card-text>
-        <v-card-text class="no-padding"> Description goes here... </v-card-text>
+        <v-card-title class="no-padding" align="left"> Dish Name </v-card-title>
+        <v-card-text class="no-padding" align="left">
+          $ {{ itemPrice }}
+        </v-card-text>
+        <v-card-text class="no-padding" align="left">
+          Description goes here...
+        </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn icon color="accent" class="button-padding">
@@ -52,8 +54,9 @@ export default {
 }
 
 .image-space {
-  padding-left: 5px;
-  padding-right: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  max-height: 150px;
 }
 
 .icon-space {
