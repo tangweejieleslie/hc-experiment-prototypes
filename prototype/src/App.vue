@@ -13,6 +13,7 @@
       <v-container class="fill-height">
         <v-row>
           <v-col> <Cart></Cart></v-col>
+          <v-col><MiniItemAccordion imageSource="https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg"></MiniItemAccordion></v-col>
         </v-row>
         <v-row>
           <v-col cols="4">
@@ -50,6 +51,7 @@
 // import HelloWorld from './components/HelloWorld';
 import ItemCard from "./components/Item";
 import Cart from "./components/Cart";
+import MiniItemAccordion from "./components/MiniItemAccordion"
 
 export default {
   name: "App",
@@ -57,6 +59,7 @@ export default {
   components: {
     ItemCard,
     Cart,
+    MiniItemAccordion
   },
 
   data: () => ({

@@ -64,8 +64,7 @@ export default {
   padding: 5px;
 }
 
-.item-button {
-}
+
 
 .icon-space {
   padding-left: 5px;
