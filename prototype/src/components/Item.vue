@@ -70,6 +70,14 @@ export default {
   methods: {
     addToCart() {
       console.log("Added to cart");
+      let TotalCost = ItemListJson[this.id].price * this.quantity;
+      let itemId = this.id;
+      this.$store.commit("addItemToCart", {
+        id: itemId,
+        name: ItemListJson[itemId].name,
+        quantity: this.quantity,
+        cost: TotalCost,
+      });
       // TODO: add logic to update State, which in turn update cart
 
       // this.$router.push("/");
@@ -77,12 +85,12 @@ export default {
     },
   },
   computed: {
-    name: () => {
-      if (this.id == 1) {
-        return "one";
-      }
-      return "";
-    },
+    // name: () => {
+    //   if (this.id == 1) {
+    //     return "one";
+    //   }
+    //   return "";
+    // },
   },
 };
 </script>
@@ -101,7 +109,7 @@ export default {
   padding-right: 5px;
 }
 
-.spacing{
-  padding: 20px
+.spacing {
+  padding: 20px;
 }
 </style>

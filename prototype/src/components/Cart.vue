@@ -70,29 +70,11 @@
 export default {
   props: {
     items: Array,
-    // name: String,
-    // quantity: Number,
-    // itemPrice: Number,
-    // type: String,
-    // imageSource: String
   },
   components: {},
   data: function () {
     return {
-      cartItems: [
-        {
-          id: 1,
-          name: "Curry'O",
-          quantity: 10,
-          cost: 10,
-        },
-        {
-          id: 2,
-          name: "Sardine",
-          quantity: 10,
-          cost: 10,
-        },
-      ],
+      cartItems: this.$store.state.cartItems,
     };
   },
 };
