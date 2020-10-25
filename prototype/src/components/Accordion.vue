@@ -83,6 +83,17 @@ export default {
   padding-left: 30px;
 }
 
+/* .v-list-group--active > .v-list-group__header + .v-list-item--active{
+    background: purple;
+    border-left: 0px solid #e87655;
+} */
+
+
+/* .v-list-group__header .v-list-item .v-list-item--active {
+  color: #000;
+  background-color: purple;
+} */
+
 .v-list-item--active {
   color: #e87655 !important;
   background-color: #fdf1ee;
