@@ -85,11 +85,11 @@ export default {
       let sum = 0;
 
       for (let id in this.cartItems) {
-        sum += parseInt(this.cartItems[id].cost);
+        sum += parseFloat(this.cartItems[id].cost);
         // console.log(item);
       }
 
-      return sum;
+      return sum.toFixed(2);
     },
   },
   data: function () {

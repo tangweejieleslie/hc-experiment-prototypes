@@ -69,19 +69,25 @@ export default {
   },
   methods: {
     addToCart() {
-      console.log("Added to cart");
-      let TotalCost = ItemListJson[this.id].price * this.quantity;
-      let itemId = this.id;
-      this.$store.commit("addItemToCart", {
-        id: itemId,
-        name: ItemListJson[itemId].name,
-        quantity: this.quantity,
-        cost: TotalCost,
-      });
-      // TODO: add logic to update State, which in turn update cart
+      if (this.quantity > 0) {
+        console.log("Added to cart");
+        let TotalCost = ItemListJson[this.id].price * this.quantity;
+        let itemId = this.id;
+        this.$store.commit("addItemToCart", {
+          id: itemId,
+          name: ItemListJson[itemId].name,
+          quantity: this.quantity,
+          cost: TotalCost.toFixed(2),
+        });
+        // TODO: add logic to update State, which in turn update cart
 
-      // this.$router.push("/");
-      this.$router.go(-1);
+        // this.$router.push("/");
+        this.$router.go(-1);
+      } else {
+        console.log("Error!")
+        alert("Quantity Cannot be Zero!")
+        // TODO: log instrumentation
+      }
     },
   },
   computed: {
