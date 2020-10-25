@@ -13,20 +13,18 @@
             </v-list-item-content>
           </template>
 
-          <v-list-group
+          <v-list-item
             v-for="child in item.items"
             :key="child.title"
             link
             class="child-item"
-            sub-group
-            no-action
           >
-            <template v-slot:activator class="selected">
+            <template v-slot:activator>
               <v-list-item-content>
-                <v-list-item-title v-text="child.title"></v-list-item-title>
+                <v-list-item-title class="text--black" v-text="child.title"></v-list-item-title>
               </v-list-item-content>
             </template>
-          </v-list-group>
+          </v-list-item>
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
@@ -47,7 +45,7 @@ export default {
         },
         {
           title: "Old Chang Kee Favourites",
-          active: true,
+          active: false,
           items: [
             { title: "List Item" },
             { title: "List Item" },
@@ -67,7 +65,16 @@ export default {
     };
   },
   methods: {
-
+    close() {
+      this.items.forEach((item) => {
+        if (item.active) {
+          item.delay(function () {
+            item.active = false;
+          }, 300);
+          return false;
+        }
+      });
+    },
   },
 };
 </script> 
@@ -86,6 +93,6 @@ export default {
 .child-item {
   padding-left: 35px;
   color: black !important;
-
+  background: red;
 }
 </style>
