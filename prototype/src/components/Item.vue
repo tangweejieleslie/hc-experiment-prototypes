@@ -1,9 +1,9 @@
 <template>
   <v-card class="item">
-    <v-img width="480px" height="360px" :src="imageSource"></v-img>
+    <v-img width="480px" height="360px" :src="ItemList[id].imageSource"></v-img>
     <div class="item-content">
-      <v-card-title> Dish Name </v-card-title>
-      <v-card-text> $ {{ itemPrice }} </v-card-text>
+      <v-card-title> {{ ItemList[id].name }} </v-card-title>
+      <v-card-text> $ {{ ItemList[id].price }} </v-card-text>
       <v-card-text>
         <p>Special Request?</p>
 
@@ -25,7 +25,7 @@
         v-else-if="type === 'increment'"
         :quantity.sync="quantity"
       ></Increment>
-      <v-btn color="accent" class="item-button" block tile @click="addToCart"> 
+      <v-btn color="accent" class="item-button" block tile @click="addToCart">
         <v-icon class="icon-space">mdi-plus</v-icon> Add to My Order
       </v-btn>
       <br />
@@ -41,12 +41,12 @@ import Increment from "./Quantity/Increment";
 // import VueRouter from 'vue-router'
 // import { routes } from "@/router/index.js";
 
-
+import ItemListJson from "@/store/Items.json"
 
 export default {
   props: {
     id: Number,
-    name: String,
+    // name: String,
     quantity: Number,
     itemPrice: Number,
     type: String,
@@ -57,15 +57,25 @@ export default {
     return {
       //   itemPrice: 99.0,
       //   quantity: 30,
+      // id: 1,
+      ItemList: ItemListJson
     };
   },
-  methods:{
-    addToCart(){
+  methods: {
+    addToCart() {
       console.log("Added to cart");
       // this.$router.push("/");
       this.$router.go(-1);
-    }
-  }
+    },
+  },
+  computed: {
+    name: () => {
+      if (this.id == 1) {
+        return "one";
+      }
+      return "";
+    },
+  },
 };
 </script>
 

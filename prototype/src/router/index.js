@@ -40,7 +40,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Sandbox.vue')
   },
   {
-    path: '/item/:id',
+    path: '/item/:id/:type',
     name: 'Item',
     component: () => import(/* webpackChunkName: "about" */ '../components/Item.vue'),
     props: true
