@@ -6,7 +6,6 @@
           v-for="item in items"
           :key="item.title"
           v-model="item.active"
-          no-action
         >
           <template v-slot:activator class="selected">
             <v-list-item-content>
@@ -14,11 +13,20 @@
             </v-list-item-content>
           </template>
 
-          <v-list-item v-for="child in item.items" :key="child.title">
-            <v-list-item-content>
-              <v-list-item-title v-text="child.title"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
+          <v-list-group
+            v-for="child in item.items"
+            :key="child.title"
+            link
+            class="child-item"
+            sub-group
+            no-action
+          >
+            <template v-slot:activator class="selected">
+              <v-list-item-content>
+                <v-list-item-title v-text="child.title"></v-list-item-title>
+              </v-list-item-content>
+            </template>
+          </v-list-group>
         </v-list-group>
       </v-list>
     </v-navigation-drawer>
@@ -39,7 +47,7 @@ export default {
         },
         {
           title: "Old Chang Kee Favourites",
-          active: false,
+          active: true,
           items: [
             { title: "List Item" },
             { title: "List Item" },
@@ -59,16 +67,7 @@ export default {
     };
   },
   methods: {
-    close() {
-      this.items.forEach((item) => {
-        if (item.active) {
-          item.delay(function () {
-            item.active = false;
-          }, 300);
-          return false;
-        }
-      });
-    },
+
   },
 };
 </script> 
@@ -78,14 +77,15 @@ export default {
   padding-left: 30px;
 }
 
-.selected {
-  color: #e87655;
-  background-color: #fdf1ee;
-}
-
 .v-list-item--active {
   color: #e87655 !important;
   background-color: #fdf1ee;
   border-left: 3px solid #e87655;
+}
+
+.child-item {
+  padding-left: 35px;
+  color: black !important;
+
 }
 </style>
