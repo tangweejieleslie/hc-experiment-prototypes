@@ -18,7 +18,14 @@
                 {{ item.quantity }} x {{ item.name }}
                 <v-spacer></v-spacer>
                 ${{ item.cost }}
-                <v-btn color="red" class="icon" icon @click="deleteItem(item.id)"> X </v-btn>
+                <v-btn
+                  color="red"
+                  class="icon"
+                  icon
+                  @click="deleteItem(item.id)"
+                >
+                  X
+                </v-btn>
               </v-row>
             </v-list-item-title>
           </v-list-item-content>
@@ -37,7 +44,7 @@
         <v-spacer></v-spacer>
         <v-col cols="6" align="right">
           <v-card-text>
-            ( $ {{ cartItems.length }} ) <br />
+            ( $ {{ subtotal }} ) <br />
             ( $ {{ cartItems.length }} ) <br />
             ( $ {{ cartItems.length }} )
           </v-card-text>
@@ -73,17 +80,29 @@ export default {
     items: Array,
   },
   components: {},
+  computed: {
+    subtotal() {
+      let sum = 0;
+
+      for (let id in this.cartItems) {
+        sum += parseInt(this.cartItems[id].cost);
+        // console.log(item);
+      }
+
+      return sum;
+    },
+  },
   data: function () {
     return {
       cartItems: this.$store.state.cartItems,
     };
   },
   methods: {
-    deleteItem(itemId){
+    deleteItem(itemId) {
       // console.log(e.target)
-      console.log(itemId)
-    }
-  }
+      console.log(itemId);
+    },
+  },
 };
 </script>
 
@@ -116,11 +135,10 @@ export default {
   width: 90%;
 }
 
-.icon{
+.icon {
   width: 15px;
   height: 15px;
   margin-left: 15px;
   margin-bottom: 15px;
-  
 }
 </style>
