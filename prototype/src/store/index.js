@@ -8,8 +8,11 @@ export default new Vuex.Store({
     quantity: 50
   },
   mutations: {
-
-    increment: state => state.quantity++,
+    increment: state => {
+      state.quantity++;
+      console.log("increasing")
+    },
+    // increment: state => state.quantity++,
     decrement: state => state.quantity--
   },
   actions: {},
