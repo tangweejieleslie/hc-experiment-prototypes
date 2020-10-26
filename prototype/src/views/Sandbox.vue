@@ -2,6 +2,7 @@
   <v-app>
     {{ this.$store.state.quantity }}
     <v-btn @click="handleState">increase</v-btn>
+    <v-btn @click="test">increase</v-btn>
     <TopBar></TopBar>
 
     <v-main>
@@ -63,6 +64,7 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 import Accordion from "@/components/Accordion";
 
+import {default as logging } from "@/logging/interface.js"
 
 export default {
   name: "App",
@@ -73,18 +75,19 @@ export default {
     MiniItemAccordion,
     MiniItemFull,
     Accordion,
-  
   },
 
   data: () => ({
     //
   }),
-  methods:{
-    handleState(){
-      this.$store.commit('increment')
-
+  methods: {
+    handleState() {
+      this.$store.commit("increment");
+    },
+    test(){
+      logging()
     }
-  }
+  },
 };
 </script>
 
