@@ -89,7 +89,7 @@ export default {
     },
     test(event) {
       // Invoke Custom Logging Function
-      logging(event, {DV: "2", LogVersion: "0.1", Component: "Sandbox", View: "Sandbox", Target: "LogTestButton", Info: "....", TimeStamp: event.timeStamp})
+      logging(event, {DV: "2", Component: "Sandbox", View: "Sandbox", Target: "LogTestButton", Info: "...."})
     },
   },
 };
