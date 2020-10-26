@@ -37,6 +37,8 @@ import Cart from "@/components/Cart";
 import MiniItemAccordion from "@/components/MiniItemAccordion";
 // import MiniItemFull from "@/components/MiniItemFullLayout";
 import Accordion from "@/components/Accordion";
+// import {default as logging } from "@/logging/interface.js"
+
 
 export default {
   name: "Home",
