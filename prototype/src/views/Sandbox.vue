@@ -2,6 +2,8 @@
   <v-app>
     {{ this.$store.state.quantity }}
     <v-btn @click="handleState">increase</v-btn>
+
+    <!-- Invoke Custom Logging Function - Entry Point -->
     <v-btn @click="test">Log Test</v-btn>
     <TopBar></TopBar>
 
@@ -64,9 +66,7 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 import Accordion from "@/components/Accordion";
 
-
-// const customEvent = new Event('custom1');
-
+// Custom Logging Test
 import { default as logging } from "@/logging/customLogging.js";
 
 export default {
@@ -88,7 +88,8 @@ export default {
       this.$store.commit("increment");
     },
     test(event) {
-      logging(event, {name: "Test Event"})
+      // Invoke Custom Logging Function
+      logging(event, {DV: "2", LogVersion: "0.1", Component: "Sandbox", View: "Sandbox", Target: "LogTestButton", Info: "....", TimeStamp: event.timeStamp})
     },
   },
 };

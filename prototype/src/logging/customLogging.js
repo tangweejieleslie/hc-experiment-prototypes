@@ -1,7 +1,8 @@
 function logging(event, otherDetails){
 
     console.log("Logging...");
-    console.log(event, otherDetails );
+    console.log("Event Details: " ,event);
+    console.log("Details for Google Form: ", otherDetails );
 }
 
 export default logging
