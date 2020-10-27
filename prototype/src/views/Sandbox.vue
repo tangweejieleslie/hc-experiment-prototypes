@@ -66,7 +66,7 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 import Accordion from "@/components/Accordion";
 
-// Custom Logging Test
+// Custom Logging
 import { default as logging } from "@/logging/customLogging.js";
 
 export default {
@@ -89,7 +89,7 @@ export default {
     },
     log(event) {
       // Invoke Custom Logging Function
-      logging(event, {Info: "....", Target: "LogTestButton", View: "Sandbox", Component: "Sandbox", DV: "2"})
+      logging(event, "null", {Info: "....", Target: "LogTestButton", View: "Sandbox", Component: "Sandbox", DV: "2"})
     },
   },
 };

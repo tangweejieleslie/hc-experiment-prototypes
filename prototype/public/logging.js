@@ -112,6 +112,12 @@ function getUniqueId() {
   return localStorage['uid'];
 }
 
+var viewLookup = {
+  "#/": "LandingView",
+  "#/accordion": "MenuView",
+  "#/full": "MenuView",
+}
+
 // Log the given event.
 function logEvent(event, customName, customInfo) {
 	
@@ -136,6 +142,8 @@ function logEvent(event, customName, customInfo) {
   var target = document;
   if (event) {target = elementDesc(event.target);}
   var view = location.hash;
+  if (view.includes("#/")) {view = viewLookup[view]}
+
   var component = 'null';
   var dv = 'null';
 
@@ -149,12 +157,12 @@ function logEvent(event, customName, customInfo) {
 
   // to prevent double logging
   // logging will take place if component is not custom and there is no customInfo OR
-  // if componenet is custom and customInfo is provided
+  // if component is custom (i.e. customInfo is provided)
   // (i.e. all custom logging should be logged with some customInfo)
   var custom = false;
   if (event) {custom = event.target.offsetParent.dataset.custom;}
   if (custom == undefined) {custom = false;}
-  var log = (!custom && customInfo == undefined) || (custom && customInfo != undefined);
+  var log = (!custom && customInfo == undefined) || (customInfo != undefined);
 
   if (ENABLE_CONSOLE_LOGGING && log) {
     console.log(uid, time, info, eventName, target, view, component, LOG_VERSION, dv);

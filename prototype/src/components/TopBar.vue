@@ -9,12 +9,12 @@
     <v-spacer></v-spacer>
     <ul>
       <li>
-        <v-btn flat depressed class="primary" to="/accordion">
+        <v-btn @click="log" data-custom=true flat depressed class="primary" to="/accordion">
           Accordion View</v-btn
         >
       </li>
       <li>
-        <v-btn flat depressed class="primary" to="/full"> Full Menu View</v-btn>
+        <v-btn @click="log" data-custom=true flat depressed class="primary" to="/full"> Full Menu View</v-btn>
       </li>
       <li>
         <v-btn flat depressed class="primary" to="/sandbox">
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { default as logging } from "@/logging/customLogging.js";
+
 export default {
   name: "App",
 
@@ -34,6 +36,12 @@ export default {
   data: () => ({
     //
   }),
+  methods: {
+    log(event) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {Info: "Click to Menu View", Target: "LoadMenu", Component: "LoadMenuButton", DV: "2"})
+    },
+  },
 };
 </script>
 
