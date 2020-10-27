@@ -20,7 +20,7 @@ var LOG_VERSION = '0.1';           // Labels every entry with version: "0.1".
 
 // These event types are intercepted for logging before jQuery handlers.
 var EVENT_TYPES_TO_LOG = {
-  // click: true,
+  click: true,
   // mousedown: true,
   // keydown: true,
   // custom1: true,
@@ -133,23 +133,34 @@ function logEvent(event, customName, customInfo) {
     infoObj = Object.assign(infoObj, customInfo);
   }
   var info = JSON.stringify(infoObj);
-  if ("Info" in customInfo) {info = customInfo["Info"];}
-
   var target = document;
   if (event) {target = elementDesc(event.target);}
-  if ("Target" in customInfo) {target = customInfo["Target"];}
-
   var view = location.hash;
-  if ("View" in customInfo) {view = customInfo["View"];}
-
   var component = 'null';
-  if ("Component" in customInfo) {component = customInfo["Component"];}
+  var dv = 'null';
 
-  if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, info, eventName, target, view, component, LOG_VERSION);
+  if (customInfo) {
+    if ("Info" in customInfo) {info = customInfo["Info"];}
+    if ("Target" in customInfo) {target = customInfo["Target"];}
+    if ("View" in customInfo) {view = customInfo["View"];}
+    if ("Component" in customInfo) {component = customInfo["Component"];}
+    if ("DV" in customInfo) {dv = customInfo["DV"];}
   }
-  if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, info, eventName, target, view, component, LOG_VERSION);
+
+  // to prevent double logging
+  // logging will take place if component is not custom and there is no customInfo OR
+  // if componenet is custom and customInfo is provided
+  // (i.e. all custom logging should be logged with some customInfo)
+  var custom = false;
+  if (event) {custom = event.target.offsetParent.dataset.custom;}
+  if (custom == undefined) {custom = false;}
+  var log = (!custom && customInfo == undefined) || (custom && customInfo != undefined);
+
+  if (ENABLE_CONSOLE_LOGGING && log) {
+    console.log(uid, time, info, eventName, target, view, component, LOG_VERSION, dv);
+  }
+  if (ENABLE_NETWORK_LOGGING && log) {
+    sendNetworkLog(uid, time, info, eventName, target, view, component, LOG_VERSION, dv);
   }
 }
 
@@ -202,8 +213,7 @@ function sendNetworkLog(
     view,
     component,
     log_version,
-    menuview,
-    quantityview) {
+    dv) {
   var formid = "e/1FAIpQLSc9ZQq_eb-Nx0PYLNjH4zyc9IGG7jvX45dJETKgjtTbRloaNg";
   var data = {
     "entry.437607017": userid,
@@ -214,8 +224,7 @@ function sendNetworkLog(
     "entry.1156172868": view,
     "entry.524730173": component,
     "entry.1822129368": log_version,
-    "entry.986761258": menuview,
-    "entry.1912000873": quantityview
+    "entry.1912000873": dv
   };
   var params = [];
   var key = null;

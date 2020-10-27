@@ -4,7 +4,7 @@
     <v-btn @click="handleState">increase</v-btn>
 
     <!-- Invoke Custom Logging Function - Entry Point -->
-    <v-btn @click="test">Log Test</v-btn>
+    <v-btn @click="log" data-custom=true>Log Test</v-btn>
     <TopBar></TopBar>
 
     <v-main>
@@ -87,9 +87,9 @@ export default {
     handleState() {
       this.$store.commit("increment");
     },
-    test(event) {
+    log(event) {
       // Invoke Custom Logging Function
-      logging(event, {DV: "2", Component: "Sandbox", View: "Sandbox", Target: "LogTestButton", Info: "...."})
+      logging(event, {Info: "....", Target: "LogTestButton", View: "Sandbox", Component: "Sandbox", DV: "2"})
     },
   },
 };
