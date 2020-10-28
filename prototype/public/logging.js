@@ -158,19 +158,15 @@ function logEvent(event, customName, customInfo) {
   // logging will take place if component is not custom and there is no customInfo
   // OR if customInfo is provided
   var custom = false;
-
+  var custom1 = undefined
   if (event) {
-    try {
-      custom = event.target.offsetParent.dataset.custom;
-      if (custom == undefined) {
-        custom = event.target.parentNode.parentNode.dataset.custom;
-      }
-    }
-    catch(err) {
-      custom = event.target.parentNode.parentNode.dataset.custom;
-    }
+      try {custom1 = event.target.offsetParent.dataset.custom}
+      catch(err) {custom1 = undefined}
+    var customList = [custom1,
+                    event.target.parentNode.parentNode.dataset.custom,
+                    event.srcElement.dataset.custom]
+    if (customList.includes("true")) {custom = true;}
   }
-  if (custom == undefined) {custom = false;}
   var log = (!custom && customInfo == undefined) || (customInfo != undefined);
 
   if (ENABLE_CONSOLE_LOGGING && log) {
