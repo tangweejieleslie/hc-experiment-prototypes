@@ -13,6 +13,8 @@
             outlined
             v-model="quantity"
             @change="$emit('update:quantity', quantity)"
+            data-custom=true 
+            @click.native="log"
           ></v-text-field>
         </v-col>
       </v-row>
@@ -21,6 +23,8 @@
 </template>
 
 <script>
+import { default as logging } from "@/logging/customLogging.js";
+
 export default {
   props: {
     quantity: Number,
@@ -33,6 +37,10 @@ export default {
   methods: {
     sliderChange() {
       // $emit('update:quantity', quantity);
+    },
+    log(event) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {Info: "Click on Quantity Input", Target: "Input", View: "ItemView", Component: "Input", DV: "2"})
     },
   },
 };

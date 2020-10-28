@@ -6,7 +6,7 @@
       <v-card-text> $ {{ itemPrice }} </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding">
+        <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding" id="test" data-custom=true @click.native="log($event, id)">
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-card-actions>
@@ -16,6 +16,7 @@
 
 <script>
 import "@mdi/js";
+import { default as logging } from "@/logging/customLogging.js";
 
 export default {
   props: {
@@ -40,6 +41,12 @@ export default {
       //   itemPrice: 99.0,
       //   quantity: 30,
     };
+  },
+  methods: {
+    log(event, id) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {Info: "Click on Item", Target: "LoadItem", View: "MenuView", Component: `LoadItem${id}Button`, DV: "2"})
+    },
   },
 };
 </script>

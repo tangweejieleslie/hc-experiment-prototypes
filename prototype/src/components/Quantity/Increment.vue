@@ -14,7 +14,9 @@
             @click="
               quantity -= 1;
               $emit('update:quantity', quantity);
+              log($event);
             "
+            data-custom=true 
           >
             <v-icon>mdi-minus</v-icon>
           </v-btn>
@@ -32,7 +34,9 @@
             @click="
               quantity += 1;
               $emit('update:quantity', quantity);
+              log($event);
             "
+            data-custom=true 
           >
             <v-icon>mdi-plus</v-icon>
           </v-btn>
@@ -43,6 +47,8 @@
 </template>
 
 <script>
+import { default as logging } from "@/logging/customLogging.js";
+
 export default {
   props: {
     quantity: Number,
@@ -55,6 +61,10 @@ export default {
   methods: {
     sliderChange() {
       // $emit('update:quantity', quantity);
+    },
+    log(event) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {Info: "Click on Quantity Increment", Target: "Increment", View: "ItemView", Component: "Increment", DV: "2"})
     },
   },
 };

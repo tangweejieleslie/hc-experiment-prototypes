@@ -20,16 +20,17 @@ var LOG_VERSION = '0.1';           // Labels every entry with version: "0.1".
 
 // These event types are intercepted for logging before jQuery handlers.
 var EVENT_TYPES_TO_LOG = {
-  mousedown: true,
-  keydown: true,
-  custom1: true,
+  click: true,
+  // mousedown: true,
+  // keydown: true,
+  // custom1: true,
 };
 
 // These event properties are copied to the log if present.
 var EVENT_PROPERTIES_TO_LOG = {
-  which: true,
-  pageX: true,
-  pageY: true
+  // which: true,
+  // pageX: true,
+  // pageY: true
 };
 
 // This function is called to record some global state on each event.
@@ -111,6 +112,12 @@ function getUniqueId() {
   return localStorage['uid'];
 }
 
+var viewLookup = {
+  "#/": "LandingView",
+  "#/accordion": "MenuView",
+  "#/full": "MenuView",
+}
+
 // Log the given event.
 function logEvent(event, customName, customInfo) {
 	
@@ -118,6 +125,7 @@ function logEvent(event, customName, customInfo) {
 	
   var time = (new Date).getTime();
   var eventName = customName || event.type;
+ if (customName == 'null') {eventName = event.type;}
   // By default, monitor some global state on every event.
   var infoObj = GLOBAL_STATE_TO_LOG();
   // And monitor a few interesting fields from the event, if present.
@@ -133,13 +141,39 @@ function logEvent(event, customName, customInfo) {
   var info = JSON.stringify(infoObj);
   var target = document;
   if (event) {target = elementDesc(event.target);}
-  var state = location.hash;
+  var view = location.hash;
+  if (view.includes("#/")) {view = viewLookup[view]}
+  var component = 'null';
+  var dv = 'null';
 
-  if (ENABLE_CONSOLE_LOGGING) {
-    console.log(uid, time, eventName, target, info, state, LOG_VERSION);
+  if (customInfo) {
+    if ("Info" in customInfo) {info = customInfo["Info"];}
+    if ("Target" in customInfo) {target = customInfo["Target"];}
+    if ("View" in customInfo) {view = customInfo["View"];}
+    if ("Component" in customInfo) {component = customInfo["Component"];}
+    if ("DV" in customInfo) {dv = customInfo["DV"];}
   }
-  if (ENABLE_NETWORK_LOGGING) {
-    sendNetworkLog(uid, time, eventName, target, info, state, LOG_VERSION);
+
+  // to prevent double logging
+  // logging will take place if component is not custom and there is no customInfo
+  // OR if customInfo is provided
+  var custom = false;
+  var custom1 = undefined
+  if (event) {
+      try {custom1 = event.target.offsetParent.dataset.custom}
+      catch(err) {custom1 = undefined}
+    var customList = [custom1,
+                    event.target.parentNode.parentNode.dataset.custom,
+                    event.srcElement.dataset.custom]
+    if (customList.includes("true")) {custom = true;}
+  }
+  var log = (!custom && customInfo == undefined) || (customInfo != undefined);
+
+  if (ENABLE_CONSOLE_LOGGING && log) {
+    console.log(uid, time, info, eventName, target, view, component, LOG_VERSION, dv);
+  }
+  if (ENABLE_NETWORK_LOGGING && log) {
+    sendNetworkLog(uid, time, info, eventName, target, view, component, LOG_VERSION, dv);
   }
 }
 
@@ -180,25 +214,33 @@ return {
 //
 /////////////////////////////////////////////////////////////////////////////
 
+// Network Log submission function
+// submits to the google form at this URL:
+// docs.google.com/forms/d/e/1FAIpQLSc9ZQq_eb-Nx0PYLNjH4zyc9IGG7jvX45dJETKgjtTbRloaNg/viewform
 function sendNetworkLog(
-    uid,
-    time,
-    eventName,
-    target,
+    userid,
+    timestamp,
     info,
-    state,
-    log_version) {
-  var formid = "e/1FAIpQLScblldacOf3-BnDYM1FlVEL60PHs_x8_2yoqwLNVqmNarzX7A";
+    eventname,
+    target,
+    view,
+    component,
+    log_version,
+    dv) {
+  var formid = "e/1FAIpQLSc9ZQq_eb-Nx0PYLNjH4zyc9IGG7jvX45dJETKgjtTbRloaNg";
   var data = {
-    "entry.1213174370": uid,
-    "entry.1557365071": time,
-    "entry.2063334899": eventName,
-    "entry.787942568": target,
-    "entry.251233848": info,
-    "entry.94462225": state,
-    "entry.1473081078": log_version
+    "entry.437607017": userid,
+    "entry.2083587933": timestamp,
+    "entry.324872964": info,
+    "entry.1911452841": eventname,
+    "entry.280776174": target,
+    "entry.1156172868": view,
+    "entry.524730173": component,
+    "entry.1822129368": log_version,
+    "entry.1912000873": dv
   };
   var params = [];
+  var key = null;
   for (key in data) {
     params.push(key + "=" + encodeURIComponent(data[key]));
   }
@@ -206,3 +248,5 @@ function sendNetworkLog(
   (new Image).src = "https://docs.google.com/forms/d/" + formid +
      "/formResponse?" + params.join("&");
 }
+
+export {loggingjs}

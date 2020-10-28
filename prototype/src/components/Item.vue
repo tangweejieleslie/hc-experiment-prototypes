@@ -30,7 +30,7 @@
           v-else-if="type === 'increment'"
           :quantity.sync="quantity"
         ></Increment>
-        <v-btn color="accent" class="item-button" block tile @click="addToCart">
+        <v-btn color="accent" class="item-button" block tile @click="addToCart(); log($event);" data-custom=true>
           <v-icon class="icon-space">mdi-plus</v-icon> Add to My Order
         </v-btn>
         <br />
@@ -48,6 +48,7 @@ import Increment from "./Quantity/Increment";
 // import { routes } from "@/router/index.js";
 
 import ItemListJson from "@/store/Items.json";
+import { default as logging } from "@/logging/customLogging.js";
 
 export default {
   props: {
@@ -86,8 +87,12 @@ export default {
       } else {
         console.log("Error!")
         alert("Quantity Cannot be Zero!")
-        // TODO: log instrumentation
+        logging(null, "Error", {Info: "Quantity Cannot be Zero!", Target: "AddtoCart", View: "ItemView", Component: "AddToCartButton", DV: "4"})
       }
+    },
+    log(event) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {Info: "Click on Add to Cart", Target: "AddtoCart", View: "ItemView", Component: "AddToCartButton", DV: "2"})
     },
   },
   computed: {
