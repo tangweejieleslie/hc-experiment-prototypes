@@ -143,7 +143,6 @@ function logEvent(event, customName, customInfo) {
   if (event) {target = elementDesc(event.target);}
   var view = location.hash;
   if (view.includes("#/")) {view = viewLookup[view]}
-
   var component = 'null';
   var dv = 'null';
 
@@ -156,11 +155,21 @@ function logEvent(event, customName, customInfo) {
   }
 
   // to prevent double logging
-  // logging will take place if component is not custom and there is no customInfo OR
-  // if component is custom (i.e. customInfo is provided)
-  // (i.e. all custom logging should be logged with some customInfo)
+  // logging will take place if component is not custom and there is no customInfo
+  // OR if customInfo is provided
   var custom = false;
-  if (event) {custom = event.target.offsetParent.dataset.custom;}
+
+  if (event) {
+    try {
+      custom = event.target.offsetParent.dataset.custom;
+      if (custom == undefined) {
+        custom = event.target.parentNode.parentNode.dataset.custom;
+      }
+    }
+    catch(err) {
+      custom = event.target.parentNode.parentNode.dataset.custom;
+    }
+  }
   if (custom == undefined) {custom = false;}
   var log = (!custom && customInfo == undefined) || (customInfo != undefined);
 
