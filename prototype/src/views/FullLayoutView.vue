@@ -29,7 +29,9 @@
               :name="item.name"
               :itemPrice="item.price"
               :imageSource="item.img"
-              :id = "item.id"
+              :id="item.id"
+              :quantityInput="type"
+              :quantity="1"
             ></MiniItemFull
           ></v-col>
         </v-row>
@@ -53,7 +55,9 @@
               :name="item.name"
               :itemPrice="item.price"
               :imageSource="item.img"
-              :id = "item.id"
+              :id="item.id"
+              :quantityInput="type"
+              :quantity="1"
             ></MiniItemFull
           ></v-col>
         </v-row>
@@ -74,7 +78,7 @@ import Cart from "@/components/Cart";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 // import Accordion from "@/components/Accordion";
 
-import items from "@/items.js"
+import items from "@/items.js";
 
 export default {
   name: "Home",
@@ -85,9 +89,12 @@ export default {
     MiniItemFull,
     // Accordion,
   },
+  props: {
+    type: String,
+  },
   data: function () {
     return {
-      items
+      items,
     };
   },
 };

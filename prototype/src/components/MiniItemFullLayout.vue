@@ -14,11 +14,17 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-            <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding" id="test" data-custom=true @click.native="log($event, id)">
-              <v-icon>mdi-plus</v-icon>
-            </v-btn>
-
-
+          <v-btn
+            :to="`/item/${quantityInput}/${id}`"
+            icon
+            color="accent"
+            class="button-padding"
+            id="test"
+            data-custom="true"
+            @click.native="log($event, id)"
+          >
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
         </v-card-actions>
       </v-col>
     </v-row>
@@ -32,6 +38,7 @@ export default {
   props: {
     name: String,
     quantity: Number,
+    quantityInput: String,
     itemPrice: Number,
     type: String,
     imageSource: String,
@@ -44,11 +51,9 @@ export default {
       //   quantity: 30,
     };
   },
-  methods:{
-      addItem(){
-
-      }
-  }
+  methods: {
+    addItem() {},
+  },
 };
 </script>
 

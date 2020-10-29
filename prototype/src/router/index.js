@@ -24,7 +24,7 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/SelectInputType.vue'),
+    component: () => import(/* webpackChunkName: "about" */ '../views/AccordionSelectInputType.vue'),
     props: true
   },
   {
@@ -42,7 +42,16 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/FullLayoutView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/FullSelectInputType.vue')
+  },
+  {
+    path: '/full/:type',
+    name: 'Full',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/FullLayoutView.vue'),
+    props: true
   },
   {
     path: '/sandbox',
