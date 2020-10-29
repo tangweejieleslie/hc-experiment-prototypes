@@ -6,7 +6,7 @@
       <v-card-text> $ {{ itemPrice }} </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding" id="test" data-custom=true @click.native="log($event, id)">
+        <v-btn :to="$route.path + `/item/${id}`" icon color="accent" class="button-padding" id="test" data-custom=true @click.native="log($event, id)">
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-card-actions>

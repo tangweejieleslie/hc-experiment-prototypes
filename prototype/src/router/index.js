@@ -4,6 +4,10 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+// const debugComp = {
+//   template: '<h1>debug message</h1>'
+// }
+
 const routes = [
   {
     path: '/',
@@ -40,7 +44,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Sandbox.vue')
   },
   {
-    path: '/item/:id/:type',
+    path: '/:layoutType/:quantityType',
+    name: 'General',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    // component: debugComp
+    component: () => import(/* webpackChunkName: "about" */ '../views/GeneralView.vue')
+  },
+  {
+    path: '/:layoutType/:quantityType/item/:id',
     name: 'Item',
     component: () => import(/* webpackChunkName: "about" */ '../components/Item.vue'),
     props: true
