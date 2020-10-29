@@ -5,13 +5,13 @@
         <v-img class="image-space" :src="imageSource"></v-img>
       </v-col>
       <v-col>
-        <v-card-title class="no-padding" align="left"> Dish Name </v-card-title>
+        <v-card-title class="no-padding" align="left"> {{name}} </v-card-title>
         <v-card-text class="no-padding" align="left">
           $ {{ itemPrice }}
         </v-card-text>
-        <v-card-text class="no-padding" align="left">
+        <!-- <v-card-text class="no-padding" align="left">
           Description goes here...
-        </v-card-text>
+        </v-card-text> -->
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn

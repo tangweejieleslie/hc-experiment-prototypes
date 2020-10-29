@@ -78,7 +78,7 @@ import Cart from "@/components/Cart";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 // import Accordion from "@/components/Accordion";
 
-import items from "@/items.js";
+import ItemListJson from "@/store/Items.json";
 
 export default {
   name: "Home",
@@ -94,7 +94,7 @@ export default {
   },
   data: function () {
     return {
-      items,
+      items: ItemListJson[this.$store.state.filter],
     };
   },
 };
