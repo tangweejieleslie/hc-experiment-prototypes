@@ -121,18 +121,10 @@ export default {
               category: "traditional-favourites",
             },
             { title: "Seafood Favourites", category: "seafood-favourites" },
-            { title: "List Item", category: "/d" },
+            { title: "List Item", category: "a" },
           ],
         },
-        {
-          title: "Traditional Favourites",
-          active: false,
-          items: [
-            { title: "Seafood Favourites", link: "/3" },
-            { title: "Chicken Favourites", link: "/f" },
-            { title: "Desserts", link: "/g" },
-          ],
-        },
+
       ],
     };
   },
