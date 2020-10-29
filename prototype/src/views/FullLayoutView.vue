@@ -12,54 +12,30 @@
         <Accordion></Accordion>
       </v-col> -->
       <v-col cols="9">
-        <div align="left">
-          <h2>Traditional Favourites</h2>
-        </div>
+        <v-row v-for="(items, category) in items" v-bind:key="category">
+          <v-col cols="12">
+            <h1>{{ category }}</h1>
+          </v-col>
 
-        <v-row justify="center">
-          <v-col
-            cols="12"
-            sm="6"
-            md="4"
-            v-for="item in items"
-            v-bind:key="item"
-            align="center"
-          >
-            <MiniItemFull
-              :name="item.name"
-              :itemPrice="item.price"
-              :imageSource="item.img"
-              :id="item.id"
-              :quantityInput="type"
-              :quantity="1"
-            ></MiniItemFull
-          ></v-col>
-        </v-row>
-
-        <br />
-        <hr />
-        <div align="left">
-          <h2>Category 2</h2>
-        </div>
-
-        <v-row justify="center">
-          <v-col
-            cols="12"
-            sm="6"
-            md="4"
-            v-for="item in items"
-            v-bind:key="item"
-            align="center"
-          >
-            <MiniItemFull
-              :name="item.name"
-              :itemPrice="item.price"
-              :imageSource="item.img"
-              :id="item.id"
-              :quantityInput="type"
-              :quantity="1"
-            ></MiniItemFull
-          ></v-col>
+          <v-row>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+              v-for="item in items"
+              v-bind:key="item"
+              align="center"
+            >
+              <MiniItemFull
+                :name="item.name"
+                :itemPrice="item.price"
+                :imageSource="item.img"
+                :id="item.id"
+                :quantityInput="type"
+                :quantity="1"
+              ></MiniItemFull
+            ></v-col>
+          </v-row>
         </v-row>
       </v-col>
       <v-col cols="3">
@@ -94,7 +70,8 @@ export default {
   },
   data: function () {
     return {
-      items: ItemListJson[this.$store.state.filter],
+      items: ItemListJson,
+      // items: ItemListJson[this.$store.state.filter],
     };
   },
 };
