@@ -6,6 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     quantity: 50,
+    inputType: "",
     cartItems: [{
       id: 1,
       name: "Curry'O",
@@ -24,6 +25,10 @@ export default new Vuex.Store({
     increment: state => {
       state.quantity++;
       console.log("increasing")
+    },
+    updateInputType: (state, payload)  => {
+      console.log(payload.value)
+      state.inputType = payload.value
     },
     addItemToCart: (state, payload) => {
       state.cartItems.push({

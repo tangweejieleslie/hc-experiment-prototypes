@@ -61,6 +61,9 @@ console.log(allItems);
 
 export default {
   name: "Home",
+  mounted:{
+
+  },
   components: {
     // ItemCard,
     Cart,

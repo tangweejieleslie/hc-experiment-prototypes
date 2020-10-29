@@ -49,7 +49,7 @@ import Increment from "./Quantity/Increment";
 
 import ItemListJson from "@/store/Items.json";
 import { default as logging } from "@/logging/customLogging.js";
-
+let category = []
 export default {
   props: {
     id: Number,
@@ -58,6 +58,7 @@ export default {
     itemPrice: Number,
     type: String,
     imageSource: String,
+    category: String
   },
   components: { Slider, InputBox, Increment },
   data: function () {
@@ -65,7 +66,7 @@ export default {
       //   itemPrice: 99.0,
         quantity: 1,
       // id: 1,
-      ItemList: ItemListJson,
+      ItemList: ItemListJson[category],
     };
   },
   methods: {

@@ -1,5 +1,7 @@
 <template>
   <v-card class="mx-auto" tile>
+
+    
     <v-navigation-drawer permanent width="100%">
       <v-list>
         <v-list-group
@@ -18,8 +20,10 @@
             :key="child.title"
             link
             class="child-item"
-            :to="child.link"
+            :to="`/accordion/${quantityInput}/${child.link}`" 
           >
+            <!-- :to="`/item/${quantityInput}/${id}`" -->
+            <!-- :to="child.link" -->
             <v-list-item-content>
               <v-list-item-title v-text="child.title"></v-list-item-title>
             </v-list-item-content>
@@ -34,8 +38,15 @@
 import "@mdi/js";
 
 export default {
+  props: {
+    // inputType: String,
+  },
+  mounted: {
+
+  },
   data() {
     return {
+      quantityInput: this.$store.state.inputType,
       items: [
         {
           title: "The Old Chang Kee Platter",
@@ -46,9 +57,9 @@ export default {
           title: "Old Chang Kee Favourites",
           active: true,
           items: [
-            { title: "List Item", link: "/b" },
-            { title: "List Item", link: "/c" },
-            { title: "List Item", link: "/d" },
+            { title: "List Item", link: "b" },
+            { title: "List Item", link: "c" },
+            { title: "List Item", link: "d" },
           ],
         },
         {
@@ -64,16 +75,7 @@ export default {
     };
   },
   methods: {
-    close() {
-      this.items.forEach((item) => {
-        if (item.active) {
-          item.delay(function () {
-            item.active = false;
-          }, 300);
-          return false;
-        }
-      });
-    },
+
   },
 };
 </script> 
@@ -87,7 +89,6 @@ export default {
     background: purple;
     border-left: 0px solid #e87655;
 } */
-
 
 /* .v-list-group__header .v-list-item .v-list-item--active {
   color: #000;
