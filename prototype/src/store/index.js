@@ -6,6 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     quantity: 50,
+    date: "",
+    time: "",
     filter: "traditional-favourites",
     cartItems: []
     // cartItems: [{
@@ -27,6 +29,10 @@ export default new Vuex.Store({
       state.quantity++;
       console.log("increasing")
     },
+    updateDateTime: (state, payload) => { 
+      state.date = payload.date;
+      state.time = payload.time
+    },
     setFilter: (state, payload) => {
       state.filter = payload.filter;
     },
@@ -39,11 +45,11 @@ export default new Vuex.Store({
       })
       console.log("Adding Items")
     },
-    removeItemFromCart: (state,payload) => {
+    removeItemFromCart: (state, payload) => {
       console.log(payload.element);
       const IsItemInArray = (element) => element == payload.element;
       let index = state.cartItems.findIndex(IsItemInArray);
-      
+
       // console.log(payload.elementPosition);
       state.cartItems.splice(index, 1)
 

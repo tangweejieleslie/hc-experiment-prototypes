@@ -15,7 +15,6 @@
           <v-list-item-content>
             <v-list-item-title>
               <v-row class="cart-item-row" justify="end" align="end">
-                
                 {{ item.quantity }} x {{ item.name }}
                 <v-spacer></v-spacer>
                 ${{ item.cost }}
@@ -58,8 +57,9 @@
       <v-row>
         <v-column
           ><v-card-text
-            >For: Specific time
-            <v-btn icon color="accent">
+            >Deliever during: {{ this.$store.state.date }}
+            {{ this.$store.state.time }}
+            <v-btn icon color="accent" :to="`/time`">
               <v-icon>mdi-chevron-down</v-icon>
             </v-btn></v-card-text
           ></v-column
@@ -67,7 +67,14 @@
       </v-row>
 
       <v-row class="item-content">
-        <v-btn color="accent" class="item-button" block tile depressed>
+        <v-btn
+          color="accent"
+          class="item-button"
+          block
+          tile
+          depressed
+          @click="orderNow"
+        >
           Order Now<v-icon class="icon-space">mdi-chevron-right</v-icon>
         </v-btn>
       </v-row>
@@ -103,6 +110,14 @@ export default {
       // console.log(e.target)
       // console.log(this.items[itemId]);
       this.$store.commit("removeItemFromCart", { element: itemId });
+    },
+    selectTime() {
+      // alert("Selecting time...")
+      // redirect view to select time
+    },
+    orderNow() {
+      // Perform checking according to tasks
+      // log end time
     },
   },
 };
