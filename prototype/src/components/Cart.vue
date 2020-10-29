@@ -83,6 +83,8 @@
 </template>
 
 <script>
+import { default as validate } from "@/plugins/orderValidation.js";
+
 export default {
   props: {
     items: Array,
@@ -116,6 +118,23 @@ export default {
       // redirect view to select time
     },
     orderNow() {
+      let formattedOrder = {}
+      // Reformat Cart Items
+      for(let id in this.cartItems){
+        let name = this.cartItems[id].name;
+        let quantity = this.cartItems[id].quantity;
+        formattedOrder[name] = quantity;
+      }
+
+
+      let message = validate(
+        formattedOrder,
+        this.subtotal,
+        this.$store.state.date,
+        this.$store.state.time,
+        this.$store.state.trialId
+      );
+      alert(message);
       // Perform checking according to tasks
       // log end time
     },

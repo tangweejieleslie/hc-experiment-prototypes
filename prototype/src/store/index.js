@@ -6,6 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     quantity: 50,
+    userid: "",
+    trialId: "A",
     date: "",
     time: "",
     filter: "traditional-favourites",
