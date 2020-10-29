@@ -23,7 +23,7 @@
                   color="red"
                   class="icon"
                   icon
-                  @click="deleteItem(item.id)"
+                  @click="deleteItem(item.name)"
                 >
                   X
                 </v-btn>
@@ -101,8 +101,8 @@ export default {
   methods: {
     deleteItem(itemId) {
       // console.log(e.target)
-      console.log(itemId);
-      this.$store.commit("removeItemFromCart", { elementPosition: itemId -1  });
+      // console.log(this.items[itemId]);
+      this.$store.commit("removeItemFromCart", { element: itemId });
     },
   },
 };
