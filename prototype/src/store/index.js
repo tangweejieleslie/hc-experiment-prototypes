@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     quantity: 50,
     userid: "",
-    trialId: "A",
+    trialId: "Sample",
     date: "",
     time: "",
     filter: "traditional-favourites",

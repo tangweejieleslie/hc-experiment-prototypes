@@ -25,6 +25,10 @@ export default function validate(order, orderValue, date, time, trialID) {
             "Crispy Chicken Wing": 1,
             "Sweet &amp; Sour Fish (DF)": 1,
             "Barley Cordial": 1
+        },
+        "Sample": {
+            "Curry 'O": 25,
+            "Carrot K8": 100
         }
     }
 
