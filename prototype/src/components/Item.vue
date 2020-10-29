@@ -4,7 +4,7 @@
       <v-img
         width="480px"
         height="360px"
-        :src="ItemList[id].imageSource"
+        :src="ItemList[id].img"
       ></v-img>
       <div class="item-content">
         <v-card-title> {{ ItemList[id].name }} </v-card-title>

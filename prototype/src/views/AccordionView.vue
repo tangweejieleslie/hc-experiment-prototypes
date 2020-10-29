@@ -12,14 +12,21 @@
         </div>
 
         <v-row justify="center">
-          <v-col cols="12" sm="6" md="4" v-for="item in items" v-bind:key="item.id" align="center">
+          <v-col
+            cols="12"
+            sm="6"
+            md="4"
+            v-for="item in items"
+            v-bind:key="item.id"
+            align="center"
+          >
             <MiniItemAccordion
               :name="item.name"
               :itemPrice="item.price"
               :imageSource="item.img"
               :id="item.id"
               :quantityInput="type"
-              :quantity=1
+              :quantity="1"
             ></MiniItemAccordion
           ></v-col>
         </v-row>
@@ -41,6 +48,16 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 import Accordion from "@/components/Accordion";
 // import {default as logging } from "@/logging/interface.js"
 
+import ItemListJson from "@/store/Items.json";
+
+let allItems = [];
+for (let category in ItemListJson) {
+  console.log(ItemListJson[category])
+  for (let id in ItemListJson[category]) {
+    allItems.push(ItemListJson[category][id]);
+  }
+}
+console.log(allItems);
 
 export default {
   name: "Home",
@@ -51,52 +68,12 @@ export default {
     // MiniItemFull,
     Accordion,
   },
-  props:{
-    type: String
+  props: {
+    type: String,
   },
   data: function () {
     return {
-      items: [
-        {
-          id: "1",
-          name: "Curry 'O",
-          price: "1.60",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_675a1e6a0c8a4e59bea7b0c6fb87305c~mv2_d_3264_4896_s_4_2.jpg",
-        },
-        {
-          id: "2",
-          name: "Carrot K8",
-          price: "1.50",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_f6929eeaeacf4768a4741fa92d3d0a13~mv2_d_3264_4896_s_4_2.jpg",
-        },
-        {
-          id: "3",
-          name: "Spring 'O",
-          price: "1.60",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_a906145e41d344aa84b2ae5f7dc06bad~mv2_d_3264_4896_s_4_2.jpg",
-        },
-        {
-          name: "Curry 'O",
-          price: "1.60",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_675a1e6a0c8a4e59bea7b0c6fb87305c~mv2_d_3264_4896_s_4_2.jpg",
-        },
-        {
-          name: "Carrot K8",
-          price: "1.50",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_f6929eeaeacf4768a4741fa92d3d0a13~mv2_d_3264_4896_s_4_2.jpg",
-        },
-        {
-          name: "Spring 'O",
-          price: "1.60",
-          img:
-            "https://static.wixstatic.com/media/e7fc58_a906145e41d344aa84b2ae5f7dc06bad~mv2_d_3264_4896_s_4_2.jpg",
-        },
-      ],
+      items: allItems,
     };
   },
 };
