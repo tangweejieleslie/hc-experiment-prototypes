@@ -6,7 +6,7 @@
       <v-card-text> $ {{ itemPrice }} </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding">
+        <v-btn :to="`/item/${quantityInput}/${id}`" icon color="accent" class="button-padding">
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-card-actions>
@@ -21,10 +21,12 @@ export default {
   props: {
     name: String,
     quantity: Number,
+    quantityInput: String,
     itemPrice: Number,
     type: String,
     imageSource: String,
     id: String,
+
   },
   components: {},
   // computed:{

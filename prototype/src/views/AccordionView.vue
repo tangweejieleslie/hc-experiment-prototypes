@@ -18,6 +18,8 @@
               :itemPrice="item.price"
               :imageSource="item.img"
               :id="item.id"
+              quantityInput="slider"
+              :quantity=1
             ></MiniItemAccordion
           ></v-col>
         </v-row>
