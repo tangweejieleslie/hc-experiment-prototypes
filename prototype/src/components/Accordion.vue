@@ -16,9 +16,8 @@
           <v-list-item
             v-for="child in item.items"
             :key="child.title"
-            link
             class="child-item"
-            :to="child.link"
+            @click="setFilter('b')"
           >
             <v-list-item-content>
               <v-list-item-title v-text="child.title"></v-list-item-title>
@@ -64,15 +63,10 @@ export default {
     };
   },
   methods: {
-    close() {
-      this.items.forEach((item) => {
-        if (item.active) {
-          item.delay(function () {
-            item.active = false;
-          }, 300);
-          return false;
-        }
-      });
+    setFilter(selectedFilter) {
+      console.log(this.$store.state.filter);
+      this.$store.commit("setFilter", { filter: selectedFilter });
+      console.log(this.$store.state.filter);
     },
   },
 };
@@ -87,7 +81,6 @@ export default {
     background: purple;
     border-left: 0px solid #e87655;
 } */
-
 
 /* .v-list-group__header .v-list-item .v-list-item--active {
   color: #000;
