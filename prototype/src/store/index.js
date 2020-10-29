@@ -7,19 +7,20 @@ export default new Vuex.Store({
   state: {
     quantity: 50,
     filter: "traditional-favourites",
-    cartItems: [{
-      id: 1,
-      name: "Curry'O",
-      quantity: 10,
-      cost: 10,
-    },
-    {
-      id: 2,
-      name: "Sardine",
-      quantity: 10,
-      cost: 10,
-    }
-    ]
+    cartItems: []
+    // cartItems: [{
+    //   id: 1,
+    //   name: "Curry'O",
+    //   quantity: 10,
+    //   cost: 10,
+    // },
+    // {
+    //   id: 2,
+    //   name: "Sardine",
+    //   quantity: 10,
+    //   cost: 10,
+    // }
+    // ]
   },
   mutations: {
     increment: state => {

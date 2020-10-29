@@ -99,11 +99,10 @@ export default {
   },
   props: {
     type: String,
-    category: String
+    category: String,
   },
   data: function () {
     return {
-      
       items: ItemListJson[this.$store.state.filter],
       accordionItems: [
         {
@@ -115,8 +114,11 @@ export default {
           title: "Old Chang Kee Favourites",
           active: true,
           items: [
-            { title: "List Item", category: "traditional-favourites" },
-            { title: "List Item", category: "b" },
+            {
+              title: "Traditional Favourites",
+              category: "traditional-favourites",
+            },
+            { title: "Seafood Favourites", category: "seafood-favourites" },
             { title: "List Item", category: "/d" },
           ],
         },
@@ -134,10 +136,11 @@ export default {
   },
 
   methods: {
-    updateFilter(selectedFilter){
+    updateFilter(selectedFilter) {
       this.items = ItemListJson[selectedFilter];
-    }
-  }
+      this.$store.commit("setFilter", { filter: selectedFilter });
+    },
+  },
 };
 </script>
 
@@ -146,5 +149,29 @@ export default {
 .container {
   margin: auto;
   padding: 0px;
+}
+
+.accordion-items {
+  padding-left: 30px;
+}
+
+/* .v-list-group--active > .v-list-group__header + .v-list-item--active{
+    background: purple;
+    border-left: 0px solid #e87655;
+} */
+
+/* .v-list-group__header .v-list-item .v-list-item--active {
+  color: #000;
+  background-color: purple;
+} */
+
+.v-list-item--active {
+  color: #e87655 !important;
+  background-color: #fdf1ee;
+  border-left: 3px solid #e87655;
+}
+
+.child-item {
+  padding-left: 35px;
 }
 </style>
