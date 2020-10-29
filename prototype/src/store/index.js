@@ -35,7 +35,13 @@ export default new Vuex.Store({
       console.log("Adding Items")
     },
     removeItemFromCart: (state,payload) => {
-      state.cartItems.splice(payload.elementPosition, 1)
+      console.log(payload.element);
+      const IsItemInArray = (element) => element == payload.element;
+      let index = state.cartItems.findIndex(IsItemInArray);
+      
+      // console.log(payload.elementPosition);
+      state.cartItems.splice(index, 1)
+
     },
     // increment: state => state.quantity++,
     decrement: state => state.quantity--

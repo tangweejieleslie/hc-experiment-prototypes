@@ -54,7 +54,7 @@ export default {
   props: {
     id: Number,
     // name: String,
-    quantity: Number,
+    // quantity: Number,
     itemPrice: Number,
     type: String,
     imageSource: String,
@@ -63,7 +63,7 @@ export default {
   data: function () {
     return {
       //   itemPrice: 99.0,
-      //   quantity: 30,
+        quantity: 1,
       // id: 1,
       ItemList: ItemListJson,
     };

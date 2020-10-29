@@ -24,7 +24,17 @@ const routes = [
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AccordionView.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/SelectInputType.vue'),
+    props: true
+  },
+  {
+    path: '/accordion/:type',
+    name: 'Accordion',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AccordionView.vue'),
+    props: true
   },
   {
     path: '/full',
@@ -40,7 +50,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Sandbox.vue')
   },
   {
-    path: '/item/:id/:type',
+    path: '/item/:type/:id',
     name: 'Item',
     component: () => import(/* webpackChunkName: "about" */ '../components/Item.vue'),
     props: true

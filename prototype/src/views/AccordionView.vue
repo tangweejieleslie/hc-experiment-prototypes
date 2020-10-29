@@ -18,6 +18,8 @@
               :itemPrice="item.price"
               :imageSource="item.img"
               :id="item.id"
+              :quantityInput="type"
+              :quantity=1
             ></MiniItemAccordion
           ></v-col>
         </v-row>
@@ -48,6 +50,9 @@ export default {
     MiniItemAccordion,
     // MiniItemFull,
     Accordion,
+  },
+  props:{
+    type: String
   },
   data: function () {
     return {
