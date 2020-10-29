@@ -88,6 +88,8 @@ for (let category in ItemListJson) {
 }
 console.log(allItems);
 
+import { default as logging } from "@/logging/customLogging.js";
+
 export default {
   name: "Home",
   components: {
@@ -140,6 +142,9 @@ export default {
       this.items = ItemListJson[selectedFilter];
       this.$store.commit("setFilter", { filter: selectedFilter });
     },
+  },
+  mounted() {
+    logging(undefined, "StartTask", {Info: "Start of Task", Target: "null", View: "LandingView", Component: "Accordian", DV: "1"})
   },
 };
 </script>

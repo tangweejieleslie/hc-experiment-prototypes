@@ -33,6 +33,7 @@
 
 <script>
 import "@mdi/js";
+import { default as logging } from "@/logging/customLogging.js";
 
 export default {
   props: {
@@ -53,6 +54,16 @@ export default {
   },
   methods: {
     addItem() {},
+    log(event, id) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {
+        Info: "Click on Item",
+        Target: "LoadItem",
+        View: "MenuView",
+        Component: `LoadItem${id}Button`,
+        DV: "2",
+      });
+    },
   },
 };
 </script>
