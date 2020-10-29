@@ -14,6 +14,10 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
+            <v-btn :to="`/item/${id}/slider`" icon color="accent" class="button-padding" id="test" data-custom=true @click.native="log($event, id)">
+              <v-icon>mdi-plus</v-icon>
+            </v-btn>
+
 
         </v-card-actions>
       </v-col>
@@ -31,6 +35,7 @@ export default {
     itemPrice: Number,
     type: String,
     imageSource: String,
+    id: String,
   },
   components: {},
   data: function () {
