@@ -116,6 +116,7 @@ var viewLookup = {
   "#/": "LandingView",
   "#/accordion": "MenuView",
   "#/full": "MenuView",
+  "#/time": "TimeView",
 }
 
 // Log the given event.

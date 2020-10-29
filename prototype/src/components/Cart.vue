@@ -59,7 +59,7 @@
           ><v-card-text
             >Deliever during: {{ this.$store.state.date }}
             {{ this.$store.state.time }}
-            <v-btn icon color="accent" :to="`/time`">
+            <v-btn icon color="accent" :to="`/time`" data-custom="true" @click.native="log">
               <v-icon>mdi-chevron-down</v-icon>
             </v-btn></v-card-text
           ></v-column
@@ -83,6 +83,7 @@
 </template>
 
 <script>
+import { default as logging } from "@/logging/customLogging.js";
 import { default as validate } from "@/plugins/orderValidation.js";
 
 export default {
@@ -111,6 +112,7 @@ export default {
     deleteItem(itemId) {
       // console.log(e.target)
       // console.log(this.items[itemId]);
+      logging(undefined, "Mistake", {Info: "Deleted Item From Cart", Target: "DeleteItem", View: "MenuView", Component: `DeleteItem${itemId}Button`, DV: "4"})
       this.$store.commit("removeItemFromCart", { element: itemId });
     },
     selectTime() {
@@ -137,6 +139,17 @@ export default {
       alert(message);
       // Perform checking according to tasks
       // log end time
+      logging(undefined, "EndTask", {Info: "End of Task", Target: "OrderNow", View: "MenuView", Component: "OrderButton", DV: "1"})
+    },
+    log(event) {
+      // Invoke Custom Logging Function
+      logging(event, "null", {
+        Info: "Click on Delivery Time",
+        Target: "DeliveryTime",
+        View: "MenuView",
+        Component: "DeliveryTimeButtom",
+        DV: "2",
+      });
     },
   },
 };

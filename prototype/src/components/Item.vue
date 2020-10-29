@@ -84,7 +84,7 @@ export default {
       } else {
         console.log("Error!")
         alert("Quantity Cannot be Zero!")
-        logging(null, "Error", {Info: "Quantity Cannot be Zero!", Target: "AddtoCart", View: "ItemView", Component: "AddToCartButton", DV: "4"})
+        logging(undefined, "Mistake", {Info: "Quantity Cannot be Zero!", Target: "AddtoCart", View: "ItemView", Component: "AddToCartButton", DV: "4"})
       }
     },
     log(event) {
