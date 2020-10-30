@@ -162,7 +162,7 @@ export default {
       );
 
       console.log(this.$store.state.betweenSubjectId);
-      console.log(this.$store.state.trialId);
+
       if (Number(this.$store.state.errorid) == 1) {
         alert(message);
         console.log(message)
