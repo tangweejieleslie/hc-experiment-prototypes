@@ -59,7 +59,13 @@
           ><v-card-text
             >Deliever during: {{ this.$store.state.date }}
             {{ this.$store.state.time }}
-            <v-btn icon color="accent" :to="`/time`" data-custom="true" @click.native="log">
+            <v-btn
+              icon
+              color="accent"
+              :to="`/time`"
+              data-custom="true"
+              @click.native="log"
+            >
               <v-icon>mdi-chevron-down</v-icon>
             </v-btn></v-card-text
           ></v-column
@@ -112,7 +118,13 @@ export default {
     deleteItem(itemId) {
       // console.log(e.target)
       // console.log(this.items[itemId]);
-      logging(undefined, "Mistake", {Info: "Deleted Item From Cart", Target: "DeleteItem", View: "MenuView", Component: `DeleteItem${itemId}Button`, DV: "4"})
+      logging(undefined, "Mistake", {
+        Info: "Deleted Item From Cart",
+        Target: "DeleteItem",
+        View: "MenuView",
+        Component: `DeleteItem${itemId}Button`,
+        DV: "4",
+      });
       this.$store.commit("removeItemFromCart", { element: itemId });
     },
     selectTime() {
@@ -120,14 +132,13 @@ export default {
       // redirect view to select time
     },
     orderNow() {
-      let formattedOrder = {}
+      let formattedOrder = {};
       // Reformat Cart Items
-      for(let id in this.cartItems){
+      for (let id in this.cartItems) {
         let name = this.cartItems[id].name;
         let quantity = this.cartItems[id].quantity;
         formattedOrder[name] = quantity;
       }
-
 
       let message = validate(
         formattedOrder,
@@ -136,10 +147,22 @@ export default {
         this.$store.state.time,
         this.$store.state.trialId
       );
-      alert(message);
+
+      console.log(this.$store.state.betweenSubjectId);
+
+      if (Number(this.$store.state.betweenSubjectId) == 1) {
+        alert(message);
+      }
+
       // Perform checking according to tasks
       // log end time
-      logging(undefined, "EndTask", {Info: "End of Task", Target: "OrderNow", View: "MenuView", Component: "OrderButton", DV: "1"})
+      logging(undefined, "EndTask", {
+        Info: "End of Task",
+        Target: "OrderNow",
+        View: "MenuView",
+        Component: "OrderButton",
+        DV: "1",
+      });
     },
     log(event) {
       // Invoke Custom Logging Function

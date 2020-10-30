@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     conditionId: "",
-    betweenSubjectId: "",
+    betweenSubjectId: "na",
     userid: "",
     quantity: 50,
     trialId: "Sample",
@@ -34,9 +34,9 @@ export default new Vuex.Store({
       console.log("increasing")
     },
     setId: (state, payload) => {
-      // need to follow vue reactivity rules
       state.betweenSubjectId = payload.bsid;
       state.conditionId = payload.cid;
+      state.userid = payload.id;
     }, 
     updateDateTime: (state, payload) => {
       state.date = payload.date;

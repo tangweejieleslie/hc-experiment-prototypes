@@ -4,7 +4,12 @@
       <h1>This is Group 7 UI Prototype</h1>
     </v-row>
     <v-row>
-      <v-btn class="ma-4" :to="`/${conditions[condition]}`">Start</v-btn>
+      <v-btn
+        class="ma-4"
+        :to="`/${conditions[condition]}`"
+        @click="setConditions()"
+        >Start</v-btn
+      >
     </v-row>
   </v-container>
 </template>
@@ -42,7 +47,12 @@ export default {
   }),
   methods: {
     setConditions() {
-      this.$store.commit();
+      console.log("test");
+      this.$store.commit("setId", {
+        bsid: this.between,
+        cid: this.conditions,
+        uid: this.id,
+      });
     },
   },
   mounted() {
@@ -52,6 +62,11 @@ export default {
       View: "LandingView",
       Component: "null",
       DV: "1",
+    });
+    this.$store.commit("setId", {
+      bsid: this.between,
+      cid: this.conditions,
+      uid: this.id,
     });
   },
 };
