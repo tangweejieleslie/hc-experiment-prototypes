@@ -1,10 +1,11 @@
 <template>
   <v-container class="container">
-    <v-app-bar class="offset" color="primary" flat height="120px">
+    <v-app-bar class="offset" color="white" flat height="120px">
       <!-- programmatic scrolling NOT WORKING -->
-      <v-row>
+      <v-row id="top">
         <v-btn
           class="ma-1"
+          color="primary"
           v-for="(subcats, cat) in items"
           v-bind:key="cat"
           @click="ScrollToView(cat)"
@@ -30,6 +31,7 @@
 
           <v-col cols="12">
             <h2>{{ catmap[subcat] }}</h2>
+            <v-btn @click="ScrollToTop">Back to Top</v-btn>
           </v-col>
           <v-row>
             <v-col
@@ -104,6 +106,9 @@ export default {
   methods: {
     ScrollToView(element) {
       document.getElementById(element).scrollIntoView();
+    },
+    ScrollToTop() {
+      window.scrollTo(0, 0);
     },
   },
 };
