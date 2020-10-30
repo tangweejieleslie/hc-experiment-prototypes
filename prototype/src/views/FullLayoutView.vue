@@ -12,30 +12,40 @@
         <Accordion></Accordion>
       </v-col> -->
       <v-col cols="9">
-        <v-row v-for="(items, cat) in items" v-bind:key="cat">
+        <v-row v-for="(subcats, cat) in items" v-bind:key="cat">
+<!-- display category           -->
           <v-col cols="12">
             <h1>{{ cat }}</h1>
           </v-col>
 
-          <v-row>
-            <v-col
-              cols="12"
-              sm="6"
-              md="4"
-              v-for="item in items"
-              v-bind:key="item"
-              align="center"
-            >
-              <MiniItemFull
-                :name="item.name"
-                :itemPrice="item.price"
-                :imageSource="item.img"
-                :id="item.id"
-                :quantityInput="type"
-                :quantity="1"
-                :category="cat"
-              ></MiniItemFull
-            ></v-col>
+          <v-row v-for="(items, subcat) in subcats" v-bind:key="subcat"> 
+<!-- display subcategory -->
+            <v-col cols="12">
+              <h2>{{ subcat }}</h2>
+            </v-col>
+
+            <v-row>
+              <v-col
+                cols="12"
+                sm="6"
+                md="4"
+                v-for="item in items"
+                v-bind:key="item"
+                align="center"
+              >
+                <MiniItemFull
+                  :name="item.name"
+                  :itemPrice="item.price"
+                  :imageSource="item.img"
+                  :id="item.id"
+                  :quantityInput="type"
+                  :quantity="1"
+                  :category="cat"
+                ></MiniItemFull
+              ></v-col>
+            </v-row>
+
+
           </v-row>
         </v-row>
       </v-col>
@@ -55,7 +65,8 @@ import Cart from "@/components/Cart";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 // import Accordion from "@/components/Accordion";
 import { default as logging } from "@/logging/customLogging.js";
-import ItemListJson from "@/store/Items.json";
+// import ItemListJson from "@/store/Items.json";
+import ItemListJson from "@/assets/items.json";
 
 export default {
   name: "Home",
