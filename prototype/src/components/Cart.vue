@@ -165,7 +165,6 @@ export default {
 
       if (Number(this.$store.state.errorid) == 1) {
         alert(message);
-        console.log(message)
       } else if (Number(this.$store.state.errorid) == 2) {
         this.subtleError = true;
       }
