@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app color="primary" flat>
+  <v-app-bar app flat color="primary">
     <div class="d-flex align-center left-margin">
       <v-img
         height="50px"

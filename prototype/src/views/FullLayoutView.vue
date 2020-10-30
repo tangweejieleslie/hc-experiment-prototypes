@@ -1,28 +1,36 @@
 <template>
   <v-container class="container">
-    <v-toolbar>
+    <v-app-bar class="offset" color="primary" flat height="120px">
       <!-- programmatic scrolling NOT WORKING -->
-      <v-row >
+      <v-row>
         <v-btn
+          class="ma-1"
           v-for="(subcats, cat) in items"
           v-bind:key="cat"
-          :to="`#${cat}`"
+          @click="ScrollToView(cat)"
           >{{ catmap[cat] }}</v-btn
         >
       </v-row>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-row>
       <!-- <v-col cols="3">
         <Accordion></Accordion>
       </v-col> -->
       <v-col cols="9">
-        <v-row v-for="(foodItems, subcat) in items" v-bind:key="subcat" :id="subcat">
+        <v-row
+          v-for="(foodItems, subcat) in items"
+          v-bind:key="subcat"
+          :id="subcat"
+        >
           <!-- display subcategory -->
+          <v-col cols="12">
+            <h2 class="white--text">{{ catmap[subcat] }}</h2>
+          </v-col>
+
           <v-col cols="12">
             <h2>{{ catmap[subcat] }}</h2>
           </v-col>
-
           <v-row>
             <v-col
               cols="12"
@@ -93,6 +101,11 @@ export default {
       DV: "1",
     });
   },
+  methods: {
+    ScrollToView(element) {
+      document.getElementById(element).scrollIntoView();
+    },
+  },
 };
 </script>
 
@@ -108,5 +121,9 @@ li {
   float: left;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.offset {
+  /* margin-top: 100px; */
 }
 </style>

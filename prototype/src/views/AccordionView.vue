@@ -138,14 +138,14 @@ export default {
           items: [
             {
               title:
-                "FREE 2 X 1.5 LITRE of Seasonal Drink for every purchase of Old Chang Kee Platter ($138)!",
+                "Valued Platter",
               category: "ock-platter",
             },
           ],
         },
         {
           title: "Old Chang Kee Favourites",
-          active: true,
+          active: false,
           items: [
             {
               title: "Traditional Favourites",
