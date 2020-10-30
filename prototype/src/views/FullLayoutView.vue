@@ -1,18 +1,15 @@
 <template>
   <v-container class="container">
     <v-toolbar>
-
-
       <!-- programmatic scrolling NOT WORKING -->
-      <div v-for= "(subcats, cat) in items" v-bind:key ="cat">
-        <v-btn  @click="$vuetify.goTo(cat)">{{cat}}</v-btn>
-      </div>
-
-      <ul>
-
-        <li>Category 1</li>
-        <li>Category 2</li>
-      </ul>
+      <v-row >
+        <v-btn
+          v-for="(subcats, cat) in items"
+          v-bind:key="cat"
+          :to="`#${cat}`"
+          >{{ catmap[cat] }}</v-btn
+        >
+      </v-row>
     </v-toolbar>
 
     <v-row>
@@ -20,42 +17,31 @@
         <Accordion></Accordion>
       </v-col> -->
       <v-col cols="9">
-        <v-row v-for="(subcats, cat) in items" v-bind:key="cat">
-<!-- display category           -->
-          <v-col  cols="12">
-
-            <!-- for programmatic scrolling. NOT WORKING. -->
-            <h1 :id="cat">{{ cat }}</h1>
+        <v-row v-for="(foodItems, subcat) in items" v-bind:key="subcat" :id="subcat">
+          <!-- display subcategory -->
+          <v-col cols="12">
+            <h2>{{ catmap[subcat] }}</h2>
           </v-col>
 
-          <v-row v-for="(foodItems, subcat) in subcats" v-bind:key="subcat"> 
-<!-- display subcategory -->
-            <v-col cols="12">
-              <h2>{{ subcat }}</h2>
-            </v-col>
-
-            <v-row>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-                v-for="foodItem in foodItems"
-                v-bind:key="foodItem.name"
-                align="center"
-              >
-                <MiniItemFull
-                  :name="foodItem.name"
-                  :itemPrice="foodItem.price"
-                  :imageSource="foodItem.img"
-                  :id="foodItem.id"
-                  :quantityInput="type"
-                  :quantity="1"
-                  :category="cat"
-                ></MiniItemFull
-              ></v-col>
-            </v-row>
-
-
+          <v-row>
+            <v-col
+              cols="12"
+              sm="6"
+              md="4"
+              v-for="foodItem in foodItems"
+              v-bind:key="foodItem.name"
+              align="center"
+            >
+              <MiniItemFull
+                :name="foodItem.name"
+                :itemPrice="foodItem.price"
+                :imageSource="foodItem.img"
+                :id="foodItem.id"
+                :quantityInput="type"
+                :quantity="1"
+                :category="cat"
+              ></MiniItemFull
+            ></v-col>
           </v-row>
         </v-row>
       </v-col>
@@ -77,6 +63,7 @@ import MiniItemFull from "@/components/MiniItemFullLayout";
 import { default as logging } from "@/logging/customLogging.js";
 // import ItemListJson from "@/store/Items.json";
 import ItemListJson from "@/assets/items.json";
+import CategoryMapping from "@/assets/CategoryMappings.json";
 
 export default {
   name: "Home",
@@ -93,11 +80,18 @@ export default {
   data: function () {
     return {
       items: ItemListJson,
+      catmap: CategoryMapping,
       // items: ItemListJson[this.$store.state.filter],
     };
   },
   mounted() {
-    logging(undefined, "StartTask", {Info: "Start of Task", Target: "null", View: "LandingView", Component: "FullLayout", DV: "1"})
+    logging(undefined, "StartTask", {
+      Info: "Start of Task",
+      Target: "null",
+      View: "LandingView",
+      Component: "FullLayout",
+      DV: "1",
+    });
   },
 };
 </script>

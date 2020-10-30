@@ -1,0 +1,214 @@
+{
+    "Valued Bento": {
+        "$6 Valued Bento": [
+            {
+                "id": 0,
+                "name": "Set A: Sambal Fish",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_4b770597a8c547d882e0f19f0f2754c1~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 1,
+                "name": "Set B: Chicken Chop",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_e73279e3a2b04896801e9a4a596f2ef5~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 2,
+                "name": "Set C: Dry Curry Chicken",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_d11fcee9f450476db2426a3994c5ff65~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 3,
+                "name": "Set D: Sweet & Sour Fish",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_bb0d5633862f4561850bf7189a5d4898~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ]
+    },
+    "Local Bento": {
+        "Healthier Deluxe Bento": [
+            {
+                "id": 4,
+                "name": "Set A: Stir-Fried Chicken Breast",
+                "price": 6.8,
+                "img": "https://static.wixstatic.com/media/81b281_5f3b07f7191049da86fe35649bec3576~mv2.jpeg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpeg"
+            },
+            {
+                "id": 5,
+                "name": "Set B: Steamed Fish With Seawead Sauce",
+                "price": 6.8,
+                "img": "https://static.wixstatic.com/media/81b281_11382e1a4c8741fbaeb8fa3358c5c3d7~mv2.jpeg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpeg"
+            }
+        ],
+        "Hainanese Chicken Rice Bento": [
+            {
+                "id": 6,
+                "name": "Hainanese Chicken Rice Bento",
+                "price": 7,
+                "img": "https://static.wixstatic.com/media/81b281_9744daafc2a74c428e8e149e23157444~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ],
+        "Vegetarian Bento": [
+            {
+                "id": 7,
+                "name": "Set A: Pandan Mock Chicken Mushroom Noodle",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_3594c854f2b94d0db4aeaf471e622e80~mv2.png/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.png"
+            },
+            {
+                "id": 8,
+                "name": "Set B: Sweet & Sour Mock Chicken",
+                "price": 6,
+                "img": "https://static.wixstatic.com/media/81b281_0c3128c504504bc88d0a09d1637acfd0~mv2.png/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.png"
+            }
+        ]
+    },
+    "The Old Chang Kee Platter": {
+        "FREE 2 X 1.5 LITRE of Seasonal Drink for every purchase of Old Chang Kee Platter ($138)!": [
+            {
+                "id": 9,
+                "name": "The Old Chang Kee Platter",
+                "price": 138,
+                "img": "https://static.wixstatic.com/media/81b281_a1cbbdb0cbb04264a7c2209887ef1de0~mv2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ]
+    },
+    "Old Chang Kee Favourites (Min Order of $150)": {
+        "Traditional Favourites": [
+            {
+                "id": 10,
+                "name": "Curry 'O",
+                "price": 1.6,
+                "img": "https://static.wixstatic.com/media/e7fc58_675a1e6a0c8a4e59bea7b0c6fb87305c~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 11,
+                "name": "Carrot K8",
+                "price": 1.5,
+                "img": "https://static.wixstatic.com/media/e7fc58_f6929eeaeacf4768a4741fa92d3d0a13~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 12,
+                "name": "Spring 'O",
+                "price": 1.6,
+                "img": "https://static.wixstatic.com/media/e7fc58_a906145e41d344aa84b2ae5f7dc06bad~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 13,
+                "name": "Gyoza OnStik",
+                "price": "Sold Out",
+                "img": "https://static.wixstatic.com/media/e7fc58_376010e315114512967b88f61ce5aac8~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ],
+        "Seafood Favourites": [
+            {
+                "id": 14,
+                "name": "Sardine 'O",
+                "price": 1.6,
+                "img": "https://static.wixstatic.com/media/e7fc58_7fecede4a65e45c5b2be74d2f1f9a96a~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 15,
+                "name": "Fishball OnStik",
+                "price": 1.5,
+                "img": "https://static.wixstatic.com/media/e7fc58_c7e7e7da62fa421eb44a04d0a0a75212~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 16,
+                "name": "Soton Ball Onstik",
+                "price": 1.7,
+                "img": "https://static.wixstatic.com/media/e7fc58_d4e2d3567f3948bea2e372fd7d15e882~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 17,
+                "name": "Sotong Head Onstik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_e3f680f508ca4fc99f472907fdaaa0e7~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 18,
+                "name": "Soton Wing OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_0613fcaa4a1244bf9e9f8eeb6fa13d5e~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 19,
+                "name": "Big Fishball OnStik",
+                "price": 2.2,
+                "img": "https://static.wixstatic.com/media/e7fc58_8fefc1a72dd547efa25f955ee9ed0739~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 20,
+                "name": "Crab Nugget OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_ec4edc7c4767401fa2aca9c99c4b6435~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 21,
+                "name": "Fish Fillet OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_31c6a3a69a16415580204587418a3f32~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ],
+        "Chicken Favourites": [
+            {
+                "id": 22,
+                "name": "Chicken Mushroom 'O",
+                "price": 1.6,
+                "img": "https://static.wixstatic.com/media/e7fc58_7a2184a79ff541abaf058a8cefd46c0c~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 23,
+                "name": "Chicken Wing",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_047889907a0b4cb48c2c4e759ab53cda~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 24,
+                "name": "Chicken Nugget OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_645c098959444cab9aea93880a48588f~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 25,
+                "name": "Chicken Wrap OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_ea7be89998e845eaaf64de13e0ec60b6~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 26,
+                "name": "Cheezy Chicken Ball OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_8815774e5ffd4e3c94a4db02b99baa3f~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 27,
+                "name": "Cheezy Chicken Sausage OnStik",
+                "price": 1.8,
+                "img": "https://static.wixstatic.com/media/e7fc58_466961d2b1674105b0bd8d6888f274e5~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 28,
+                "name": "Chicken Chunky Pops",
+                "price": 3.1,
+                "img": "https://static.wixstatic.com/media/e7fc58_d2a0b64d63d64f24a4f2dad3bf009e06~mv2_d_3840_5760_s_4_2.jpeg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpeg"
+            }
+        ],
+        "Desserts": [
+            {
+                "id": 29,
+                "name": "Green Bean Feel'in",
+                "price": 1.5,
+                "img": "https://static.wixstatic.com/media/e7fc58_644ba999acf24eeda80b46e46377bd57~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            },
+            {
+                "id": 30,
+                "name": "Yam Feel'in",
+                "price": 1.5,
+                "img": "https://static.wixstatic.com/media/e7fc58_f6c67f87e38e4af0a9a59c36a0cae856~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
+            }
+        ]
+    }
+}

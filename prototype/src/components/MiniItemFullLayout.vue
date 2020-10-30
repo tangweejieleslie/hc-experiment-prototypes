@@ -6,7 +6,9 @@
       </v-col>
       <v-col>
         <v-card-title class="no-padding" align="left">
-          {{ name }}
+          <p class="text-wrap">
+            {{ name }}
+          </p>
         </v-card-title>
         <v-card-text class="no-padding" align="left">
           $ {{ itemPrice }}
@@ -28,7 +30,6 @@
               updateFilter();
             "
             :to="`/item/${quantityInput}/${id}/${category}`"
-            
           >
             <v-icon>mdi-plus</v-icon>
           </v-btn>
@@ -61,7 +62,7 @@ export default {
     };
   },
   methods: {
-    updateFilter () {
+    updateFilter() {
       // this.items = ItemListJson[selectedFilter];
       // console.log("HEYYY", this.category);
       this.$store.commit("setFilter", { filter: this.category });
@@ -108,5 +109,6 @@ export default {
 
 .no-padding {
   padding: 0px;
+  width: 100%;
 }
 </style>

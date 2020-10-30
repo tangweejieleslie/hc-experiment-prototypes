@@ -37,7 +37,7 @@
         <div align="center">
           <h1>Old Chang Kee</h1>
           <hr />
-          <h2>Traditional Favourites</h2>
+          <h2>{{ catmap[this.$store.state.filter] }}</h2>
         </div>
 
         <v-row justify="center">
@@ -77,7 +77,8 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 // import Accordion from "@/components/Accordion";
 // import {default as logging } from "@/logging/interface.js"
 
-import ItemListJson from "@/store/Items.json";
+import ItemListJson from "@/assets/items.json";
+import CategoryMappings from "@/assets/CategoryMappings.json";
 
 let allItems = [];
 for (let category in ItemListJson) {
@@ -105,12 +106,42 @@ export default {
   },
   data: function () {
     return {
+      catmap: CategoryMappings,
       items: ItemListJson[this.$store.state.filter],
       accordionItems: [
         {
-          title: "The Old Chang Kee Platter",
+          title: "Valued Bento",
           active: false,
-          items: [{ title: "List Item", link: "/a" }],
+          items: [{ title: "$6 Valued Bento", category: "6-valued-bento" }],
+        },
+        {
+          title: "Local Bento",
+          active: false,
+          items: [
+            {
+              title: "Healthier Deluxe Bento",
+              category: "healthier-deluxe-bento",
+            },
+            {
+              title: "Hainanese Chicken Rice Bento",
+              category: "hainanese-chicken-rice-bento",
+            },
+            {
+              title: "Vegetarian Bento",
+              category: "vegetarian-bento",
+            },
+          ],
+        },
+        {
+          title: "Old Chang Kee Platter",
+          active: false,
+          items: [
+            {
+              title:
+                "FREE 2 X 1.5 LITRE of Seasonal Drink for every purchase of Old Chang Kee Platter ($138)!",
+              category: "ock-platter",
+            },
+          ],
         },
         {
           title: "Old Chang Kee Favourites",
@@ -118,13 +149,13 @@ export default {
           items: [
             {
               title: "Traditional Favourites",
-              category: "traditional-favourites",
+              category: "trad-fav",
             },
-            { title: "Seafood Favourites", category: "seafood-favourites" },
-            { title: "List Item", category: "a" },
+            { title: "Seafood Favourites", category: "seafood-fav" },
+            { title: "Chicken Favourites", category: "chicken-fav" },
+            { title: "Desserts", category: "desserts" },
           ],
         },
-
       ],
     };
   },
@@ -136,7 +167,13 @@ export default {
     },
   },
   mounted() {
-    logging(undefined, "StartTask", {Info: "Start of Task", Target: "null", View: "LandingView", Component: "Accordian", DV: "1"})
+    logging(undefined, "StartTask", {
+      Info: "Start of Task",
+      Target: "null",
+      View: "LandingView",
+      Component: "Accordian",
+      DV: "1",
+    });
   },
 };
 </script>
