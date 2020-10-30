@@ -57,7 +57,7 @@ import Increment from "./Quantity/Increment";
 // import VueRouter from 'vue-router'
 // import { routes } from "@/router/index.js";
 
-import ItemListJson from "@/store/Items.json";
+import ItemListJson from "@/assets/items.json";
 import { default as logging } from "@/logging/customLogging.js";
 
 export default {

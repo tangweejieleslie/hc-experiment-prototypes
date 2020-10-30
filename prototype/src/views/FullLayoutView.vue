@@ -39,7 +39,7 @@
                 :id="foodItem.id"
                 :quantityInput="type"
                 :quantity="1"
-                :category="cat"
+                :category="subcat"
               ></MiniItemFull
             ></v-col>
           </v-row>
