@@ -62,7 +62,7 @@ export default function validate(order, orderValue, date, time, trialID) {
             return "Wrong Delivery Orders, double check your cart";
         }
     }
-    return "Order completed! Please continue return to Qualtrics/Mechanical Turk.";
+    return "Order completed! Please close this window and return to Qualtrics/Mechanical Turk.";
 
 
 }

@@ -170,14 +170,25 @@ export default {
       }
 
       // Perform checking according to tasks
-      // log end time
-      logging(undefined, "EndTask", {
-        Info: "End of Task",
-        Target: "OrderNow",
-        View: "MenuView",
-        Component: "OrderButton",
-        DV: "1",
-      });
+      if (!message.includes("Order completed")) {
+        logging(undefined, "Mistake", {
+          Info: message,
+          Target: "OrderNow",
+          View: "MenuView",
+          Component: "OrderButton",
+          DV: "4",
+        });
+      }
+      else {
+        // log end time
+        logging(undefined, "EndTask", {
+          Info: "End of Task",
+          Target: "OrderNow",
+          View: "MenuView",
+          Component: "OrderButton",
+          DV: "1",
+        });
+      }
     },
     log(event) {
       // Invoke Custom Logging Function
