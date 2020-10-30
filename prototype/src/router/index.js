@@ -11,6 +11,12 @@ const routes = [
     component: Home
   },
   {
+    path: '/home/:condition/:between/:id',
+    name: 'Home',
+    component: Home,
+    props: true
+  },
+  {
     path: '/time',
     name: 'Time',
     // route level code-splitting
