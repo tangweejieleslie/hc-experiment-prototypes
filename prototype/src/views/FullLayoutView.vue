@@ -70,7 +70,6 @@ import Cart from "@/components/Cart";
 // import MiniItemAccordion from "@/components/MiniItemAccordion";
 import MiniItemFull from "@/components/MiniItemFullLayout";
 // import Accordion from "@/components/Accordion";
-import { default as logging } from "@/logging/customLogging.js";
 // import ItemListJson from "@/store/Items.json";
 import ItemListJson from "@/assets/items.json";
 import CategoryMapping from "@/assets/CategoryMappings.json";
@@ -94,15 +93,6 @@ export default {
       menuType: this.$store.state.menuid,
       // items: ItemListJson[this.$store.state.filter],
     };
-  },
-  mounted() {
-    logging(undefined, "StartTask", {
-      Info: "Start of Task",
-      Target: "null",
-      View: "LandingView",
-      Component: "FullLayout",
-      DV: "1",
-    });
   },
   methods: {
     ScrollToView(element) {

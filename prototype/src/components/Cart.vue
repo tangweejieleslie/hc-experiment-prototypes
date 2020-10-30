@@ -162,22 +162,34 @@ export default {
       );
 
       console.log(this.$store.state.betweenSubjectId);
-
+      console.log(this.$store.state.trialId);
       if (Number(this.$store.state.errorid) == 1) {
         alert(message);
+        console.log(message)
       } else if (Number(this.$store.state.errorid) == 2) {
         this.subtleError = true;
       }
 
       // Perform checking according to tasks
-      // log end time
-      logging(undefined, "EndTask", {
-        Info: "End of Task",
-        Target: "OrderNow",
-        View: "MenuView",
-        Component: "OrderButton",
-        DV: "1",
-      });
+      if (!message.includes("Order completed")) {
+        logging(undefined, "Mistake", {
+          Info: message,
+          Target: "OrderNow",
+          View: "MenuView",
+          Component: "OrderButton",
+          DV: "4",
+        });
+      }
+      else {
+        // log end time
+        logging(undefined, "EndTask", {
+          Info: "End of Task",
+          Target: "OrderNow",
+          View: "MenuView",
+          Component: "OrderButton",
+          DV: "1",
+        });
+      }
     },
     log(event) {
       // Invoke Custom Logging Function

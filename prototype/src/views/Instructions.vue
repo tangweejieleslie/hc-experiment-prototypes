@@ -4,19 +4,19 @@
       <h1>This is Group 7 UI Prototype</h1>
     </v-row>
     <v-row>
-      Go to: "accordion/increment", "Obvious Error", "Default Menu", "User ID
+      Go to: "accordion/input", "Obvious Error", "Default Menu", "User ID
       set as '1' "
       <v-btn :to="`/home/1/1/0/1`"> 1,1,0,1 </v-btn>
     </v-row>
     <v-row>
       Go to: "full/input", "Subtle Error", "Custom Menu", "User ID set as '100'
       "
-      <v-btn :to="`/home/4/2/1/100`"> 1,1,1,100 </v-btn>
+      <v-btn :to="`/home/4/2/1/100`"> 4,2,1,100 </v-btn>
     </v-row>
         <v-row>
       Go to: "full/input", "Subtle Error", "Default Menu", "User ID set as '100'
       "
-      <v-btn :to="`/home/4/2/1/100`"> 1,1,0,100 </v-btn>
+      <v-btn :to="`/home/4/2/0/100`"> 4,2,0,100 </v-btn>
     </v-row>
   </v-container>
 </template>
@@ -24,21 +24,19 @@
 <script>
 // @ is an alias to /src
 const conditions = [
-  "accordion/increment", // 1
+  "accordion/increment", // 0
   "accordion/input",
   "accordion/slider",
   "full/increment",
   "full/input",
-  "full/slider", // 6
+  "full/slider", // 5
 ];
 const betweenSubjectsCondition = [
   "Obvious Error", // 1
-  "Subtle Error",
-  "Default Menu",
-  "Custom Menu", // 4
+  "Subtle Error", // 2
+  "Default Menu", // 0
+  "Custom Menu", // 1
 ];
-
-import { default as logging } from "@/logging/customLogging.js";
 
 export default {
   name: "Home",
@@ -65,13 +63,6 @@ export default {
     },
   },
   mounted() {
-    logging(undefined, "StartTask", {
-      Info: "Start of Task",
-      Target: "null",
-      View: "LandingView",
-      Component: "null",
-      DV: "1",
-    });
     this.$store.commit("setId", {
       error: this.error,
       menu: this.menu,

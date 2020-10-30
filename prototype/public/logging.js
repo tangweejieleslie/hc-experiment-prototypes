@@ -145,7 +145,7 @@ function logEvent(event, customName, customInfo) {
   var view = location.hash;
   if (view.includes("#/")) {view = viewLookup[view]}
   var component = 'null';
-  var dv = 'null';
+  var dv = '2';
 
   if (customInfo) {
     if ("Info" in customInfo) {info = customInfo["Info"];}
