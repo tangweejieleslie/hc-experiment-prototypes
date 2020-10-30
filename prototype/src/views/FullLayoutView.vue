@@ -1,6 +1,9 @@
 <template>
   <v-container class="container">
     <v-toolbar>
+
+
+      <!-- programmatic scrolling NOT WORKING -->
       <div v-for= "(subcats, cat) in items" v-bind:key ="cat">
         <v-btn  @click="$vuetify.goTo(cat)">{{cat}}</v-btn>
       </div>
@@ -20,6 +23,8 @@
         <v-row v-for="(subcats, cat) in items" v-bind:key="cat">
 <!-- display category           -->
           <v-col  cols="12">
+
+            <!-- for programmatic scrolling. NOT WORKING. -->
             <h1 :id="cat">{{ cat }}</h1>
           </v-col>
 
