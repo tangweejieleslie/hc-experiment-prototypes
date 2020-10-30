@@ -11,7 +11,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Instructions.vue')
   },
   {
-    path: '/home/:condition/:error/:menu/:id',
+    path: '/home/:condition/:error/:menu/:user/:trial',
     name: 'Home',
     component: Home,
     props: true

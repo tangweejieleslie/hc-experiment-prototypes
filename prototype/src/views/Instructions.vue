@@ -5,18 +5,18 @@
     </v-row>
     <v-row>
       Go to: "accordion/input", "Obvious Error", "Default Menu", "User ID
-      set as '1' "
-      <v-btn :to="`/home/1/1/0/1`"> 1,1,0,1 </v-btn>
+      set as '1' ", "Trial Set: A"
+      <v-btn :to="`/home/1/1/0/1/A`"> 1,1,0,1 </v-btn>
     </v-row>
     <v-row>
-      Go to: "full/input", "Subtle Error", "Custom Menu", "User ID set as '100'
+      Go to: "full/input", "Subtle Error", "Custom Menu", "User ID set as '100', "Trial Set: B"
       "
-      <v-btn :to="`/home/4/2/1/100`"> 4,2,1,100 </v-btn>
+      <v-btn :to="`/home/4/2/1/100/B`"> 4,2,1,100 </v-btn>
     </v-row>
         <v-row>
-      Go to: "full/input", "Subtle Error", "Default Menu", "User ID set as '100'
+      Go to: "full/input", "Subtle Error", "Default Menu", "User ID set as '100', "Trial Set: Sample"
       "
-      <v-btn :to="`/home/4/2/0/100`"> 4,2,0,100 </v-btn>
+      <v-btn :to="`/home/4/2/0/100/Sample`"> 4,2,0,100 </v-btn>
     </v-row>
   </v-container>
 </template>

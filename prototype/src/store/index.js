@@ -28,6 +28,7 @@ export default new Vuex.Store({
       state.menuid = payload.menu;
       state.conditionId = payload.cond;
       state.userid = payload.user;
+      state.trialId = payload.trial;
     }, 
     updateDateTime: (state, payload) => {
       state.date = payload.date;

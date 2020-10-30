@@ -40,7 +40,8 @@ export default {
     condition: String,
     error: String,
     menu: String,
-    id: String,
+    user: String,
+    trial: String,
   },
   components: {},
   data: () => ({
@@ -51,10 +52,10 @@ export default {
     setConditions() {
       console.log("test");
       this.$store.commit("setId", {
-      error: this.error,
-      menu: this.menu,
-      cond: this.condition,
-      user: this.id,
+        error: this.error,
+        menu: this.menu,
+        cond: this.condition,
+        trial: this.trial,
       });
     },
     log() {
@@ -63,7 +64,9 @@ export default {
         Info: "Start of Task",
         Target: this.id,
         View: "LandingView",
-        Component: `${conditions[this.condition]},${betweenSubjectsCondition[this.error-1]},${betweenSubjectsCondition[Number(this.menu)+2]}`,
+        Component: `${conditions[this.condition]},${
+          betweenSubjectsCondition[this.error - 1]
+        },${betweenSubjectsCondition[Number(this.menu) + 2]}`,
         DV: "1",
       });
     },
@@ -73,7 +76,7 @@ export default {
       error: this.error,
       menu: this.menu,
       cond: this.condition,
-      user: this.id,
+      trial: this.trial,
     });
   },
 };
