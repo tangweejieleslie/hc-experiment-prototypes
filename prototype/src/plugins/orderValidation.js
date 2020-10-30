@@ -27,8 +27,8 @@ export default function validate(order, orderValue, date, time, trialID) {
             "Barley Cordial": 1
         },
         "Sample": {
-            "Curry 'O": 25,
-            "Carrot K8": 100
+            // "Curry 'O": 25,
+            "Carrot K8": 125
         }
     }
 

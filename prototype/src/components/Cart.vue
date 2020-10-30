@@ -180,6 +180,10 @@ export default {
         });
       }
       else {
+        // Turn off exclaimation marks
+        this.subtleError = false;
+        alert(message);
+
         // log end time
         logging(undefined, "EndTask", {
           Info: "End of Task",
