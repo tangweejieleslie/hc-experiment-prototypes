@@ -5,23 +5,30 @@
         <v-img class="image-space" :src="imageSource"></v-img>
       </v-col>
       <v-col>
-        <v-card-title class="no-padding" align="left"> {{name}} </v-card-title>
+        <v-card-title class="no-padding" align="left">
+          {{ name }}
+        </v-card-title>
         <v-card-text class="no-padding" align="left">
           $ {{ itemPrice }}
         </v-card-text>
+        <!-- {{ category }} -->
         <!-- <v-card-text class="no-padding" align="left">
           Description goes here...
         </v-card-text> -->
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            :to="`/item/${quantityInput}/${id}`"
             icon
             color="accent"
             class="button-padding"
             id="test"
             data-custom="true"
-            @click.native="log($event, id)"
+            @click.native="
+              log($event, id);
+              updateFilter();
+            "
+            :to="`/item/${quantityInput}/${id}/${category}`"
+            
           >
             <v-icon>mdi-plus</v-icon>
           </v-btn>
@@ -43,7 +50,8 @@ export default {
     itemPrice: Number,
     type: String,
     imageSource: String,
-    id: String,
+    id: Number,
+    category: String,
   },
   components: {},
   data: function () {
@@ -53,6 +61,11 @@ export default {
     };
   },
   methods: {
+    updateFilter () {
+      // this.items = ItemListJson[selectedFilter];
+      // console.log("HEYYY", this.category);
+      this.$store.commit("setFilter", { filter: this.category });
+    },
     addItem() {},
     log(event, id) {
       // Invoke Custom Logging Function

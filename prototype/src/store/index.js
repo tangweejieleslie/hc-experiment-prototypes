@@ -36,6 +36,7 @@ export default new Vuex.Store({
       state.time = payload.time
     },
     setFilter: (state, payload) => {
+      // need to follow vue reactivity rules
       state.filter = payload.filter;
     },
     addItemToCart: (state, payload) => {

@@ -71,6 +71,13 @@ const routes = [
     path: '/item/:type/:id',
     name: 'Item',
     component: () => import(/* webpackChunkName: "about" */ '../components/Item.vue'),
+    props: true,
+    // redirect: '/item/:type/:id/'
+  },
+  {
+    path: '/item/:type/:id/:category',
+    name: 'ItemFull',
+    component: () => import(/* webpackChunkName: "about" */ '../components/ItemFull.vue'),
     props: true
   }
 ]

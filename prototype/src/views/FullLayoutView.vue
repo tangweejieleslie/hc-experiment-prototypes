@@ -12,9 +12,9 @@
         <Accordion></Accordion>
       </v-col> -->
       <v-col cols="9">
-        <v-row v-for="(items, category) in items" v-bind:key="category">
+        <v-row v-for="(items, cat) in items" v-bind:key="cat">
           <v-col cols="12">
-            <h1>{{ category }}</h1>
+            <h1>{{ cat }}</h1>
           </v-col>
 
           <v-row>
@@ -33,6 +33,7 @@
                 :id="item.id"
                 :quantityInput="type"
                 :quantity="1"
+                :category="cat"
               ></MiniItemFull
             ></v-col>
           </v-row>

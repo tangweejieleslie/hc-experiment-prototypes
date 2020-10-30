@@ -35,7 +35,7 @@ export default {
     itemPrice: Number,
     type: String,
     imageSource: String,
-    id: String,
+    id: Number,
   },
   components: {},
   // computed:{
