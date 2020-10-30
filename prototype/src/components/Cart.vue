@@ -84,6 +84,17 @@
           Order Now<v-icon class="icon-space">mdi-chevron-right</v-icon>
         </v-btn>
       </v-row>
+      <v-row justify="center" v-if="subtleError">
+        <v-tooltip left>
+          <template v-slot:activator="{ on, attrs }">
+            <!-- <v-btn color="primary" dark v-bind="attrs" v-on="on"> Left </v-btn> -->
+            <v-icon large color="primary" v-bind="attrs" v-on="on">
+              mdi-exclamation
+            </v-icon>
+          </template>
+          <span>There's an error somewhere...</span>
+        </v-tooltip>
+      </v-row>
     </v-container>
   </v-card>
 </template>
@@ -91,6 +102,7 @@
 <script>
 import { default as logging } from "@/logging/customLogging.js";
 import { default as validate } from "@/plugins/orderValidation.js";
+import "@mdi/js";
 
 export default {
   props: {
@@ -112,6 +124,7 @@ export default {
   data: function () {
     return {
       cartItems: this.$store.state.cartItems,
+      subtleError: false,
     };
   },
   methods: {
@@ -152,6 +165,8 @@ export default {
 
       if (Number(this.$store.state.betweenSubjectId) == 1) {
         alert(message);
+      } else if (Number(this.$store.state.betweenSubjectId) == 2) {
+        this.subtleError = true;
       }
 
       // Perform checking according to tasks
