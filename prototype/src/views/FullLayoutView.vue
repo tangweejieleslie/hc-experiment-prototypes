@@ -1,7 +1,12 @@
 <template>
   <v-container class="container">
     <v-toolbar>
+      <div v-for= "(subcats, cat) in items" v-bind:key ="cat">
+        <v-btn  @click="$vuetify.goTo(cat)">{{cat}}</v-btn>
+      </div>
+
       <ul>
+
         <li>Category 1</li>
         <li>Category 2</li>
       </ul>
@@ -14,11 +19,11 @@
       <v-col cols="9">
         <v-row v-for="(subcats, cat) in items" v-bind:key="cat">
 <!-- display category           -->
-          <v-col cols="12">
-            <h1>{{ cat }}</h1>
+          <v-col  cols="12">
+            <h1 :id="cat">{{ cat }}</h1>
           </v-col>
 
-          <v-row v-for="(items, subcat) in subcats" v-bind:key="subcat"> 
+          <v-row v-for="(foodItems, subcat) in subcats" v-bind:key="subcat"> 
 <!-- display subcategory -->
             <v-col cols="12">
               <h2>{{ subcat }}</h2>
@@ -29,15 +34,15 @@
                 cols="12"
                 sm="6"
                 md="4"
-                v-for="item in items"
-                v-bind:key="item"
+                v-for="foodItem in foodItems"
+                v-bind:key="foodItem.name"
                 align="center"
               >
                 <MiniItemFull
-                  :name="item.name"
-                  :itemPrice="item.price"
-                  :imageSource="item.img"
-                  :id="item.id"
+                  :name="foodItem.name"
+                  :itemPrice="foodItem.price"
+                  :imageSource="foodItem.img"
+                  :id="foodItem.id"
                   :quantityInput="type"
                   :quantity="1"
                   :category="cat"
