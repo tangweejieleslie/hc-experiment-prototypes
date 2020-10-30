@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/home/:condition/:between/:id',
+    path: '/home/:condition/:error/:menu/:id',
     name: 'Home',
     component: Home,
     props: true

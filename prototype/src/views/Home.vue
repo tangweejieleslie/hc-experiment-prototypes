@@ -17,18 +17,18 @@
 <script>
 // @ is an alias to /src
 const conditions = [
-  "accordion/increment",
+  "accordion/increment", // 1
   "accordion/input",
   "accordion/slider",
   "full/increment",
   "full/input",
-  "full/slider",
+  "full/slider", // 6
 ];
 const betweenSubjectsCondition = [
-  "Obvious Error",
-  "No Error",
+  "Obvious Error", // 1
+  "Subtle Error",
   "Default Menu",
-  "Custom Menu",
+  "Custom Menu", // 4
 ];
 
 import { default as logging } from "@/logging/customLogging.js";
@@ -37,7 +37,8 @@ export default {
   name: "Home",
   props: {
     condition: String,
-    between: String,
+    error: String,
+    menu: String,
     id: String,
   },
   components: {},
@@ -49,9 +50,10 @@ export default {
     setConditions() {
       console.log("test");
       this.$store.commit("setId", {
-        bsid: this.between,
-        cid: this.conditions,
-        uid: this.id,
+      error: this.error,
+      menu: this.menu,
+      cond: this.condition,
+      user: this.id,
       });
     },
   },
@@ -64,9 +66,10 @@ export default {
       DV: "1",
     });
     this.$store.commit("setId", {
-      bsid: this.between,
-      cid: this.conditions,
-      uid: this.id,
+      error: this.error,
+      menu: this.menu,
+      cond: this.condition,
+      user: this.id,
     });
   },
 };

@@ -9,7 +9,7 @@
           v-for="(subcats, cat) in items"
           v-bind:key="cat"
           @click="ScrollToView(cat)"
-          >{{ catmap[cat] }}</v-btn
+          >{{ catmap[menuType][cat] }}</v-btn
         >
       </v-row>
     </v-app-bar>
@@ -30,7 +30,7 @@
           </v-col>
 
           <v-col cols="12">
-            <h2>{{ catmap[subcat] }}</h2>
+            <h2>{{ catmap[menuType][subcat] }}</h2>
             <v-btn @click="ScrollToTop">Back to Top</v-btn>
           </v-col>
           <v-row>
@@ -91,6 +91,7 @@ export default {
     return {
       items: ItemListJson,
       catmap: CategoryMapping,
+      menuType: this.$store.state.menuid,
       // items: ItemListJson[this.$store.state.filter],
     };
   },

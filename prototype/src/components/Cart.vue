@@ -163,9 +163,9 @@ export default {
 
       console.log(this.$store.state.betweenSubjectId);
 
-      if (Number(this.$store.state.betweenSubjectId) == 1) {
+      if (Number(this.$store.state.errorid) == 1) {
         alert(message);
-      } else if (Number(this.$store.state.betweenSubjectId) == 2) {
+      } else if (Number(this.$store.state.errorid) == 2) {
         this.subtleError = true;
       }
 

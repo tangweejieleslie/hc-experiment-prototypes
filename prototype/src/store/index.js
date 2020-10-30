@@ -6,6 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     conditionId: "",
+    errorid: "",
+    menuid: "",
     betweenSubjectId: "na",
     userid: "",
     quantity: 50,
@@ -14,19 +16,7 @@ export default new Vuex.Store({
     time: "",
     filter: "traditional-favourites",
     cartItems: []
-    // cartItems: [{
-    //   id: 1,
-    //   name: "Curry'O",
-    //   quantity: 10,
-    //   cost: 10,
-    // },
-    // {
-    //   id: 2,
-    //   name: "Sardine",
-    //   quantity: 10,
-    //   cost: 10,
-    // }
-    // ]
+
   },
   mutations: {
     increment: state => {
@@ -34,9 +24,10 @@ export default new Vuex.Store({
       console.log("increasing")
     },
     setId: (state, payload) => {
-      state.betweenSubjectId = payload.bsid;
-      state.conditionId = payload.cid;
-      state.userid = payload.id;
+      state.errorid = payload.error;
+      state.menuid = payload.menu;
+      state.conditionId = payload.cond;
+      state.userid = payload.user;
     }, 
     updateDateTime: (state, payload) => {
       state.date = payload.date;
