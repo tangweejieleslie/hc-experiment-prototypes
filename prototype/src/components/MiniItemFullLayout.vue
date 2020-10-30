@@ -11,7 +11,7 @@
           </p>
         </v-card-title>
         <v-card-text class="no-padding" align="left">
-          $ {{ itemPrice }}
+          $ {{ itemPrice.toFixed(2) }}
         </v-card-text>
         <!-- {{ category }} -->
         <!-- <v-card-text class="no-padding" align="left">

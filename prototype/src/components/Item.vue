@@ -8,7 +8,7 @@
       ></v-img>
       <div class="item-content">
         <v-card-title> {{ ItemList[id].name }} </v-card-title>
-        <v-card-text> $ {{ ItemList[id].price }} </v-card-text>
+        <v-card-text> $ {{ ItemList[id].price.toFixed(2) }} </v-card-text>
         <v-card-text>
           <p>Special Request?</p>
 
