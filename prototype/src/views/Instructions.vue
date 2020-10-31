@@ -18,7 +18,7 @@
         as '1' ", "Trial Set: C"
       </v-col>
       <v-col cols="3">
-        <v-btn :to="`/home/1/1/0/1/C`"> 1,1,1,1 </v-btn>
+        <v-btn :to="`/home/1/1/1/1/C`"> 1,1,1,1 </v-btn>
       </v-col>
     </v-row>
     <v-row>
