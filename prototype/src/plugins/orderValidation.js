@@ -20,7 +20,7 @@ export default function validate(order, orderValue, date, time, trialID) {
         "C": {
             "Set A: Sambal Fish": 20,
             "Yam Feel'in": 25,
-            "Set B: Steamed Fish with Seaweed Sauce": 20,
+            "Set B: Steamed Fish With Seaweed Sauce": 20,
             "Sotong Head OnStik": 25,
         },
         "Sample": {
