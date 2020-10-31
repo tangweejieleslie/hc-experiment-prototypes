@@ -11,6 +11,11 @@
 
     <v-container class="item-content">
       <v-list>
+        <v-list-item v-if="cartItems.length==0"> 
+          <v-img :src="emptycart" >
+
+          </v-img>
+        </v-list-item>
         <v-list-item v-for="item in cartItems" v-bind:key="item.id">
           <v-list-item-content>
             <v-list-item-title>
@@ -125,6 +130,7 @@ export default {
     return {
       cartItems: this.$store.state.cartItems,
       subtleError: false,
+      emptycart: require("@/assets/images/emptyCart.png")
     };
   },
   methods: {
