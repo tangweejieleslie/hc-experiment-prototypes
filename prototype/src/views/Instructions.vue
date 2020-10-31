@@ -4,18 +4,23 @@
       <h1>This is Group 7 UI Prototype</h1>
     </v-row>
     <v-row>
-      Go to: "accordion/input", "Obvious Error", "Default Menu", "User ID
-      set as '1' ", "Trial Set: A"
+      Go to: "accordion/input", "Obvious Error", "Default Menu", "User ID set as
+      '1' ", "Trial Set: A"
       <v-btn :to="`/home/1/1/0/1/A`"> 1,1,0,1 </v-btn>
     </v-row>
     <v-row>
-      Go to: "full/input", "Subtle Error", "Custom Menu", "User ID set as '100', "Trial Set: B"
-      "
+      Go to: "accordion/input", "Obvious Error", "Custom Menu", "User ID set as
+      '1' ", "Trial Set: C"
+      <v-btn :to="`/home/1/1/0/1/C`"> 1,1,1,1 </v-btn>
+    </v-row>
+    <v-row>
+      Go to: "full/input", "Subtle Error", "Custom Menu", "User ID set as '100',
+      "Trial Set: B" "
       <v-btn :to="`/home/4/2/1/100/B`"> 4,2,1,100 </v-btn>
     </v-row>
-        <v-row>
-      Go to: "full/input", "Subtle Error", "Default Menu", "User ID set as '100', "Trial Set: Sample"
-      "
+    <v-row>
+      Go to: "full/input", "Subtle Error", "Default Menu", "User ID set as
+      '100', "Trial Set: Sample" "
       <v-btn :to="`/home/4/2/0/100/Sample`"> 4,2,0,100 </v-btn>
     </v-row>
   </v-container>

@@ -79,15 +79,7 @@ import MiniItemAccordion from "@/components/MiniItemAccordion";
 
 import ItemListJson from "@/assets/items.json";
 import CategoryMappings from "@/assets/CategoryMappings.json";
-
-let allItems = [];
-for (let category in ItemListJson) {
-  console.log(ItemListJson[category]);
-  for (let id in ItemListJson[category]) {
-    allItems.push(ItemListJson[category][id]);
-  }
-}
-console.log(allItems);
+import MainCategoryMappings from "@/assets/MainCategoryMappings.json";
 
 export default {
   name: "Home",
@@ -108,50 +100,71 @@ export default {
       items: ItemListJson[this.$store.state.filter],
       accordionItems: [
         {
-          title: "Valued Bento",
-          active: false,
-          items: [{ title: "$6 Valued Bento", category: "6-valued-bento" }],
-        },
-        {
-          title: "Local Bento",
+          title: MainCategoryMappings[this.$store.state.menuid][0],
           active: false,
           items: [
             {
-              title: "Healthier Deluxe Bento",
+              title:
+                CategoryMappings[this.$store.state.menuid]["6-valued-bento"],
+              category: "6-valued-bento",
+            },
+          ],
+        },
+        {
+          title: MainCategoryMappings[this.$store.state.menuid][1],
+          active: false,
+          items: [
+            {
+              title:
+                CategoryMappings[this.$store.state.menuid][
+                  "healthier-deluxe-bento"
+                ],
               category: "healthier-deluxe-bento",
             },
             {
-              title: "Hainanese Chicken Rice Bento",
+              title:
+                CategoryMappings[this.$store.state.menuid][
+                  "hainanese-chicken-rice-bento"
+                ],
               category: "hainanese-chicken-rice-bento",
             },
             {
-              title: "Vegetarian Bento",
+              title:
+                CategoryMappings[this.$store.state.menuid]["vegetarian-bento"],
               category: "vegetarian-bento",
             },
           ],
         },
         {
-          title: "Old Chang Kee Platter",
+          title: MainCategoryMappings[this.$store.state.menuid][2],
           active: false,
           items: [
             {
-              title:
-                "Valued Platter",
+              title: CategoryMappings[this.$store.state.menuid]["ock-platter"],
               category: "ock-platter",
             },
           ],
         },
         {
-          title: "Old Chang Kee Favourites",
+          title:MainCategoryMappings[this.$store.state.menuid][3],
           active: false,
           items: [
             {
-              title: "Traditional Favourites",
+              title: CategoryMappings[this.$store.state.menuid]["trad-fav"],
               category: "trad-fav",
             },
-            { title: "Seafood Favourites", category: "seafood-fav" },
-            { title: "Chicken Favourites", category: "chicken-fav" },
-            { title: "Desserts", category: "desserts" },
+            {
+              title: CategoryMappings[this.$store.state.menuid]["seafood-fav"],
+              category: "seafood-fav",
+            },
+            {
+              title: CategoryMappings[this.$store.state.menuid]["chicken-fav"],
+              category: "chicken-fav",
+            },
+            {
+              title: CategoryMappings[this.$store.state.menuid]["desserts"],
+              category: "desserts",
+            },
           ],
         },
       ],
