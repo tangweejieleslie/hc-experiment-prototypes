@@ -27,10 +27,14 @@
           <!-- display subcategory -->
           <v-col cols="12">
             <h2 class="white--text">{{ catmap[subcat] }}</h2>
+            
           </v-col>
 
-          <v-col cols="12">
+          <v-col cols="9">
             <h2>{{ catmap[menuType][subcat] }}</h2>
+          </v-col>
+          
+          <v-col cols="3">
             <v-btn @click="ScrollToTop">Back to Top</v-btn>
           </v-col>
           <v-row>
