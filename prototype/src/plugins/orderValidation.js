@@ -16,15 +16,10 @@ export default function validate(order, orderValue, date, time, trialID) {
             "Green Bean Feel'in": 25
         },
         "C": {
-            "Quantity": 30,
-            "Buffet Set Up": 1,
-            "Wholegrain Mee Goreng": 1,
-            "Signature Curry Chicken": 1,
-            "Steamed Tofu with Chye Poh": 1,
-            "Kailan with Garlic": 1,
-            "Crispy Chicken Wing": 1,
-            "Sweet &amp; Sour Fish (DF)": 1,
-            "Barley Cordial": 1
+            "Set A: Sambal Fish": 20,
+            "Yam Feel'in": 25,
+            "Set B: Steamed Fish with Seaweed Sauce": 20,
+            "Sotong Head OnStik": 25,
         },
         "Sample": {
             // "Curry 'O": 25,

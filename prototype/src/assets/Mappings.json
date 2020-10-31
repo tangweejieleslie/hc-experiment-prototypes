@@ -37,7 +37,7 @@
             },
             {
                 "id": 5,
-                "name": "Set B: Steamed Fish With Seawead Sauce",
+                "name": "Set B: Steamed Fish With Seaweed Sauce",
                 "price": 6.8,
                 "img": "https://static.wixstatic.com/media/81b281_11382e1a4c8741fbaeb8fa3358c5c3d7~mv2.jpeg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpeg"
             }
@@ -117,13 +117,13 @@
             },
             {
                 "id": 16,
-                "name": "Soton Ball Onstik",
+                "name": "Soton Ball OnStik",
                 "price": 1.7,
                 "img": "https://static.wixstatic.com/media/e7fc58_d4e2d3567f3948bea2e372fd7d15e882~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
             },
             {
                 "id": 17,
-                "name": "Sotong Head Onstik",
+                "name": "Sotong Head OnStik",
                 "price": 1.8,
                 "img": "https://static.wixstatic.com/media/e7fc58_e3f680f508ca4fc99f472907fdaaa0e7~mv2_d_3264_4896_s_4_2.jpg/v1/fill/w_466,h_350,usm_1.20_1.00_0.01/file.jpg"
             },
