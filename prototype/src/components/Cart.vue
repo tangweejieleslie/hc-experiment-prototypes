@@ -187,17 +187,8 @@ export default {
       }
       else {
         // Turn off exclaimation marks
-        this.subtleError = false;
-        alert(message);
-
-        // log end time
-        logging(undefined, "EndTask", {
-          Info: "End of Task",
-          Target: "OrderNow",
-          View: "MenuView",
-          Component: "OrderButton",
-          DV: "1",
-        });
+        // this.subtleError = false;
+        // alert(message);
       }
     },
     log(event) {

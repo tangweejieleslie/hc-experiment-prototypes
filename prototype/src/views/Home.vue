@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row>
-      <h1>This is Group 7 UI Prototype</h1>
+      <h1>Welcome! Please click "Start" to begin the task.</h1>
     </v-row>
     <v-row>
       <v-btn
@@ -62,11 +62,9 @@ export default {
       // Invoke Custom Logging Function
       logging(undefined, "StartTask", {
         Info: "Start of Task",
-        Target: this.id,
+        Target: this.user,
         View: "LandingView",
-        Component: `${conditions[this.condition]},${
-          betweenSubjectsCondition[this.error - 1]
-        },${betweenSubjectsCondition[Number(this.menu) + 2]}`,
+        Component: `${conditions[this.condition]},${betweenSubjectsCondition[this.error - 1]},${betweenSubjectsCondition[Number(this.menu) + 2]},${this.trial}`,
         DV: "1",
       });
     },
