@@ -57,7 +57,7 @@
       <v-row>
         <v-column
           ><v-card-text
-            >Deliever during: {{ this.$store.state.date }}
+            >Deliver during: {{ this.$store.state.date }}
             {{ this.$store.state.time }}
             <v-btn
               icon
