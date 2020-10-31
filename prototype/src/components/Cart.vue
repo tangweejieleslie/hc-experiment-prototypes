@@ -1,5 +1,5 @@
 <template>
-  <v-card class="shopping-cart">
+  <v-card class="shopping-cart" flat>
     <v-row>
       <v-column><v-card-title>My Order</v-card-title></v-column>
       <v-spacer></v-spacer>
@@ -212,6 +212,7 @@ export default {
 .shopping-cart {
   /* max-width: 480px; */
   width: 100%;
+  padding: 15px;
 }
 
 .item-content {

@@ -2,7 +2,7 @@
   <v-container class="container">
     <v-row>
       <v-col cols="3">
-        <v-card class="mx-auto" tile>
+        <v-card class="mx-auto" tile flat>
           <v-navigation-drawer permanent width="100%">
             <v-list>
               <v-list-group
