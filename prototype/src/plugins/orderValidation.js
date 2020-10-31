@@ -1,3 +1,5 @@
+import {loggingjs} from "../../public/logging.js";
+
 export default function validate(order, orderValue, date, time, trialID) {
     // const setA = new Set([25, "Chicken"]);
     // console.log(order);
@@ -57,6 +59,13 @@ export default function validate(order, orderValue, date, time, trialID) {
             return "Wrong Delivery Orders, double check your cart";
         }
     }
+    loggingjs.logEvent(undefined, "EndTask", {
+          Info: "End of Task",
+          Target: "OrderNow",
+          View: "MenuView",
+          Component: "OrderButton",
+          DV: "1",
+    });
     return "Order completed! Please close this window and return to Qualtrics/Mechanical Turk.";
 
 
