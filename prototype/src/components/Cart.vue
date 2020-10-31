@@ -191,7 +191,7 @@ export default {
       } else if (Number(this.$store.state.errorid) == 2) {
         this.subtleError = true;
       }
-      console.log(message)
+
       // Perform checking according to tasks
       if (!message.includes("Order completed")) {
         logging(undefined, "Mistake", {
