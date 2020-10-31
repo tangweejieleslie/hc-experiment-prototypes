@@ -4,9 +4,9 @@ export default function validate(order, orderValue, date, time, trialID) {
 
     const trials = {
         "A": {
-            "Chicken Mushroom ’O": 25,
-            "Chicken Wings": 25,
-            "Chicken Nuggets OnStik": 25,
+            "Chicken Mushroom 'O": 25,
+            "Chicken Wing": 25,
+            "Chicken Nugget OnStik": 25,
             "Cheezy Chicken Sausage OnStik": 25
         },
         "B": {
