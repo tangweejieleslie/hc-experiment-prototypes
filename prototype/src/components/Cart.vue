@@ -9,29 +9,44 @@
     </v-row>
     <hr />
 
-    <v-container class="item-content">
+    <v-container class="item-content" fluid>
       <v-list>
-        <v-list-item v-if="cartItems.length==0"> 
-          <v-img :src="emptycart" >
-
-          </v-img>
+        <v-list-item v-if="cartItems.length == 0">
+          <v-img :src="emptycart"> </v-img>
         </v-list-item>
         <v-list-item v-for="item in cartItems" v-bind:key="item.id">
           <v-list-item-content>
             <v-list-item-title>
-              <v-row class="cart-item-row" justify="end" align="end">
-                {{ item.quantity }} x {{ item.name }}
-                <v-spacer></v-spacer>
-                ${{ item.cost }}
-                <v-btn
-                  color="red"
-                  class="icon"
-                  icon
-                  @click="deleteItem(item.name)"
-                >
-                  X
-                </v-btn>
-              </v-row>
+              <v-container fluid>
+                <v-row class="cart-item-row" justify="start" align="start">
+                  <v-card flat class="pa-0 ma-0" width="100%">
+                    <v-card-text>
+                      <v-row class="wrap">
+                        <v-col
+                          cols="12"
+                          sm="7"
+                          class="ma-0 pa-0 horizontal-padding"
+                        >
+                          {{ item.quantity }} x {{ item.name }}
+                        </v-col>
+                        <v-col cols="6" sm="3" class="ma-0 pa-0">
+                          ${{ item.cost }}
+                        </v-col>
+                        <v-col cols="6" sm="2" class="ma-0 pa-0" align="end">
+                          <v-btn
+                            color="red"
+                            class="icon"
+                            icon
+                            @click="deleteItem(item.name)"
+                          >
+                            X
+                          </v-btn>
+                        </v-col>
+                      </v-row>
+                    </v-card-text>
+                  </v-card>
+                </v-row>
+              </v-container>
             </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -49,9 +64,11 @@
         <v-spacer></v-spacer>
         <v-col cols="6" align="right">
           <v-card-text>
-            ( $ {{ subtotal }} ) <br />
-            ( $ {{ (subtotal * 0.07).toFixed(2) }} ) <br />
-            ( $ 5.00 )
+            (${{ subtotal }}) <br />
+
+            (${{ (subtotal * 0.07).toFixed(2) }}) <br />
+
+            ($5.00)
           </v-card-text>
         </v-col>
       </v-row>
@@ -130,7 +147,7 @@ export default {
     return {
       cartItems: this.$store.state.cartItems,
       subtleError: false,
-      emptycart: require("@/assets/images/emptyCart.png")
+      emptycart: require("@/assets/images/emptyCart.png"),
     };
   },
   methods: {
@@ -184,8 +201,7 @@ export default {
           Component: "OrderButton",
           DV: "4",
         });
-      }
-      else {
+      } else {
         // Turn off exclaimation marks
         this.subtleError = false;
         alert(message);
@@ -249,5 +265,13 @@ export default {
   height: 15px;
   margin-left: 15px;
   margin-bottom: 15px;
+}
+
+.wrap-text {
+  word-break: normal; /* maybe !important  */
+}
+
+.horizontal-padding {
+  padding-right: 2px;
 }
 </style>
