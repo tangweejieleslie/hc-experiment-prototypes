@@ -37,7 +37,7 @@
         <v-col cols="6"
           ><v-card-text>
             Subtotal<br />
-            Tax <br />
+            GST (7%) <br />
             Delivery</v-card-text
           ></v-col
         >
@@ -45,8 +45,8 @@
         <v-col cols="6" align="right">
           <v-card-text>
             ( $ {{ subtotal }} ) <br />
-            ( $ {{ cartItems.length }} ) <br />
-            ( $ {{ cartItems.length }} )
+            ( $ {{ (subtotal * 0.07).toFixed(2) }} ) <br />
+            ( $ 5.00 )
           </v-card-text>
         </v-col>
       </v-row>
