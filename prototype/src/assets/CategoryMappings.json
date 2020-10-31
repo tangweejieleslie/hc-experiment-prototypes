@@ -7,21 +7,21 @@
         "vegetarian-bento": "Vegetarian Bento",
 
         "ock-platter": "Old Chang Kee Platter",
-        
+
         "trad-fav": "Traditional Favourites",
         "seafood-fav": "Seafood Favourites",
         "chicken-fav": "Chicken Favourites",
         "desserts": "Desserts"
     },
     {
-        "6-valued-bento": "$6 ",
-        "healthier-deluxe-bento": "Healthier Deluxe Bento",
-        "hainanese-chicken-rice-bento": "Hainanese Chicken Rice Bento",
-        "vegetarian-bento": "Vegetarian Bento",
-        "ock-platter": "Old Chang Kee Platter",
-        "trad-fav": "Traditional Favourites",
-        "seafood-fav": "Seafood Favourites",
-        "chicken-fav": "Chicken Favourites",
+        "6-valued-bento": "$6 Meal ",
+        "healthier-deluxe-bento": "Healthier Choice",
+        "hainanese-chicken-rice-bento": "Hainanese Meal",
+        "vegetarian-bento": "Vegetarian",
+        "ock-platter": "Platter",
+        "trad-fav": "Classics",
+        "seafood-fav": "Seafood",
+        "chicken-fav": "Chicken",
         "desserts": "Desserts"
     }
 ]
