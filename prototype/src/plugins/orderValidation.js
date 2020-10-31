@@ -70,7 +70,7 @@ export default function validate(order, orderValue, date, time, trialID) {
           View: "MenuView",
           Component: "OrderButton",
           DV: "1",
-        });
+    });
     return "Order completed! Please close this window and return to Qualtrics/Mechanical Turk.";
 
 

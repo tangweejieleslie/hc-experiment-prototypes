@@ -191,7 +191,7 @@ export default {
       } else if (Number(this.$store.state.errorid) == 2) {
         this.subtleError = true;
       }
-
+      console.log(message)
       // Perform checking according to tasks
       if (!message.includes("Order completed")) {
         logging(undefined, "Mistake", {
@@ -202,9 +202,11 @@ export default {
           DV: "4",
         });
       } else {
-        // Turn off exclaimation marks
-        // this.subtleError = false;
-        // alert(message);
+        if (Number(this.$store.state.errorid) == 2) {
+           // Turn off exclaimation marks
+          this.subtleError = false;
+          alert(message);
+        }
       }
     },
     log(event) {
