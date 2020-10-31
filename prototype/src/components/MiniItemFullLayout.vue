@@ -6,9 +6,7 @@
       </v-col>
       <v-col>
         <v-card-title class="no-padding" align="left">
-          <p class="text-wrap">
-            {{ name }}
-          </p>
+          {{ name }}
         </v-card-title>
         <v-card-text class="no-padding" align="left">
           $ {{ itemPrice.toFixed(2) }}
@@ -110,5 +108,10 @@ export default {
 .no-padding {
   padding: 0px;
   width: 100%;
+  
+}
+
+.v-card__text, .v-card__title {
+  word-break: normal; /* maybe !important  */
 }
 </style>
