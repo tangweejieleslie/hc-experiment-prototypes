@@ -6,22 +6,22 @@ export default function validate(order, orderValue, date, time, trialID) {
 
     const trials = {
         "A": {
-            "Chicken Mushroom 'O": 25,
-            "Chicken Wing": 25,
-            "Chicken Nugget OnStik": 25,
-            "Cheezy Chicken Sausage OnStik": 25
+            "Chicken Mushroom 'O": 35,
+            "Chicken Wing": 35,
+            "Chicken Nugget OnStik": 35,
+            // "Cheezy Chicken Sausage OnStik": 25
         },
         "B": {
-            "Curry 'O": 25,
-            "Sardine 'O": 25,
-            "Chicken Mushroom 'O": 25,
-            "Green Bean Feel'in": 25
+            "Curry 'O": 35,
+            "Sardine 'O": 35,
+            "Chicken Mushroom 'O": 35,
+            // "Green Bean Feel'in": 25
         },
         "C": {
-            "Set A: Sambal Fish": 20,
-            "Yam Feel'in": 25,
-            "Set B: Steamed Fish With Seaweed Sauce": 20,
-            "Sotong Head OnStik": 25,
+            "Set A: Sambal Fish": 30,
+            "Yam Feel'in": 35,
+            "Set B: Steamed Fish With Seaweed Sauce": 30,
+            // "Sotong Head OnStik": 25,
         },
         "Sample": {
             // "Curry 'O": 25,
