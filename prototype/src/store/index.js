@@ -52,7 +52,8 @@ export default new Vuex.Store({
       const IsItemInArray = (element) => element == payload.element;
       let index = state.cartItems.findIndex(IsItemInArray);
 
-      // console.log(payload.elementPosition);
+      console.log(payload.element);
+      console.log(payload.index)
       state.cartItems.splice(index, 1)
 
     },

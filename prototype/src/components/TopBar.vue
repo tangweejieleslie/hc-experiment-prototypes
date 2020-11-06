@@ -3,7 +3,7 @@
     <div class="d-flex align-center left-margin">
       <v-img contain height="50px" :src="logoSource"> </v-img>
     </div>
-    <v-spacer></v-spacer>
+    <!-- <v-spacer></v-spacer>
     <ul>
       <li>
         <v-btn
@@ -46,7 +46,7 @@
           Sandbox View</v-btn
         >
       </li>
-    </ul>
+    </ul> -->
   </v-app-bar>
 </template>
 
