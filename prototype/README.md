@@ -4,6 +4,8 @@ Repository of CS4249 AY20/21 Sem 1, Group 7.
 This repository contains the source code for our User Interface under test.
 The project is built using using Vue.js and Vuetify Material Design.
 
+Repo Link: https://github.com/tangweejieleslie/hc-experiment-prototypes
+
 # UI Variations
 To maintain consistency of UI across different variables, we made use of components. 
 Different UI variations are served from the same URL with different URL parameters. 
