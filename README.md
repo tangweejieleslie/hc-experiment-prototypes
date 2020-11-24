@@ -11,7 +11,7 @@ To maintain consistency of UI across different variables, we made use of compone
 Different UI variations are served from the same URL with different URL parameters. 
 
 The following is an example URL
-**Accordion/Increment, Obvious Error, Default Menu, User ID, Trial A**: http://103.253.146.212/#/home/0/1/0/userid/A
+**Accordion/Increment, Obvious Error, Default Menu, User ID, Trial A**: http://128.199.235.59/#/home/0/1/0/userid/A
 
 **List of Conditions**
 0: Accordion/Increment
@@ -36,30 +36,30 @@ C
 
 **URL to 24 UI Variants**
 
- 1. http://103.253.146.212/#/home/0/1/0/userid/A
- 2. http://103.253.146.212/#/home/1/1/0/userid/B
- 3. http://103.253.146.212/#/home/2/1/0/userid/C
- 4. http://103.253.146.212/#/home/3/1/0/userid/A
- 5. http://103.253.146.212/#/home/4/1/0/userid/B
- 6. http://103.253.146.212/#/home/5/1/0/userid/C
- 7. http://103.253.146.212/#/home/0/2/0/userid/A
- 8. http://103.253.146.212/#/home/1/2/0/userid/B
- 9. http://103.253.146.212/#/home/2/2/0/userid/C
- 10. http://103.253.146.212/#/home/3/2/0/userid/A
- 11. http://103.253.146.212/#/home/4/2/0/userid/B
- 12. http://103.253.146.212/#/home/5/2/0/userid/C
- 13. http://103.253.146.212/#/home/0/1/1/userid/A
- 14. http://103.253.146.212/#/home/1/1/1/userid/B
- 15. http://103.253.146.212/#/home/2/1/1/userid/C
- 16. http://103.253.146.212/#/home/3/1/1/userid/A
- 17. http://103.253.146.212/#/home/4/1/1/userid/B
- 18. http://103.253.146.212/#/home/5/1/1/userid/C
- 19. http://103.253.146.212/#/home/0/2/1/userid/A
- 20. http://103.253.146.212/#/home/1/2/1/userid/B
- 21. http://103.253.146.212/#/home/2/2/1/userid/C
- 22. http://103.253.146.212/#/home/3/2/1/userid/A
- 23. http://103.253.146.212/#/home/4/2/1/userid/B
- 24. http://103.253.146.212/#/home/5/2/1/userid/C
+ 1. http://128.199.235.59/#/home/0/1/0/userid/A
+ 2. http://128.199.235.59/#/home/1/1/0/userid/B
+ 3. http://128.199.235.59/#/home/2/1/0/userid/C
+ 4. http://128.199.235.59/#/home/3/1/0/userid/A
+ 5. http://128.199.235.59/#/home/4/1/0/userid/B
+ 6. http://128.199.235.59/#/home/5/1/0/userid/C
+ 7. http://128.199.235.59/#/home/0/2/0/userid/A
+ 8. http://128.199.235.59/#/home/1/2/0/userid/B
+ 9. http://128.199.235.59/#/home/2/2/0/userid/C
+ 10. http://128.199.235.59/#/home/3/2/0/userid/A
+ 11. http://128.199.235.59/#/home/4/2/0/userid/B
+ 12. http://128.199.235.59/#/home/5/2/0/userid/C
+ 13. http://128.199.235.59/#/home/0/1/1/userid/A
+ 14. http://128.199.235.59/#/home/1/1/1/userid/B
+ 15. http://128.199.235.59/#/home/2/1/1/userid/C
+ 16. http://128.199.235.59/#/home/3/1/1/userid/A
+ 17. http://128.199.235.59/#/home/4/1/1/userid/B
+ 18. http://128.199.235.59/#/home/5/1/1/userid/C
+ 19. http://128.199.235.59/#/home/0/2/1/userid/A
+ 20. http://128.199.235.59/#/home/1/2/1/userid/B
+ 21. http://128.199.235.59/#/home/2/2/1/userid/C
+ 22. http://128.199.235.59/#/home/3/2/1/userid/A
+ 23. http://128.199.235.59/#/home/4/2/1/userid/B
+ 24. http://128.199.235.59/#/home/5/2/1/userid/C
 
 # Folders and Files
 
